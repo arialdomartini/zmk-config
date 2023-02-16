@@ -25,6 +25,8 @@
 #define _CO   6
 
 
+#define MY_E  &mt LGUI E
+#define MY_I  &mt RGUI I
 
 / {
         keymap {
@@ -38,7 +40,7 @@
 // |      |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  |      |
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
                         bindings = <
-   &trans  &kp Q  &kp W  &mt LGUI E   &kp R  &kp T   &kp Y  &kp U    &mt RGUI I      &kp O    &kp P      &trans
+   &trans  &kp Q  &kp W  MY_E         &kp R  &kp T   &kp Y  &kp U    MY_I            &kp O    &kp P      &trans
    &trans  &kp A  &kp S  &mt LCTRL D  &kp F  &kp G   &kp H  &kp J    &mt RCTRL K     &kp L    &kp SEMI   &trans
    &trans  &kp Z  &kp X  &kp C        &kp V  &kp B   &kp N  &kp M    &kp COMMA       &kp DOT  &kp FSLH   &trans
                   &kp LGUI        &mo 1  &kp SPACE   &kp RET  &mo 2  &kp RALT
