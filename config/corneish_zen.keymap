@@ -65,15 +65,15 @@
                 cursors_layer {
                         label = "NUMBER";
 // ------------------------------------------------------------------------------------------
-// |      |     |     |     |     |     |   |     |      |   ^  |     |     |      |
+// |      |     |     |     |     |     |   |     | Home |   ^  | End |     |      |
 // |      |     |     |     |     |     |   |     | <--  | Down | --> |     |      |
-// |      |     |     |     |     |     |   |     |      |      |     |     |      |
+// |      |     |     |     |     |     |   |     | PgDn |      | PgUp|     |      |
 //                    |     |     |     |   |     |      |      |
                         bindings = <
-   &trans     &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-   &trans     &trans       &trans       &trans       &trans       &trans         &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &trans     &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                          	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+   &trans     &trans       &trans       &trans       &trans       &trans         &kp HOME  &kp UP    &kp END    &trans    &trans &trans
+   &trans     &trans       &trans       &trans       &trans       &trans         &kp LEFT  &kp DOWN  &kp RIGHT  &trans    &trans &trans
+   &trans     &trans       &trans       &trans       &trans       &trans         &kp PG_DN &trans    &kp PG_UP  &trans    &trans &trans
+                          	         &trans  &trans  &trans       &trans  &trans  &trans
                         >;
                 };
 
