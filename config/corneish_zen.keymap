@@ -18,7 +18,7 @@
 
 
 #define _BASE 0  // base keyboard
-#define _CURS 1
+#define _CURS 1  // cursors
 #define _NUM  2  //
 #define _SYMB 3
 #define _FUNL 5
@@ -37,26 +37,31 @@
 #define MY_S  &mt LALT S
 #define MY_L  &mt RALT L
 
+#define MY_A  &lt _CURS A
+
 
 / {
         keymap {
                 compatible = "zmk,keymap";
 
+                // _BASE 0
                 default_layer {
                         label = "QWERTY";
 // ----------------------------------------------------------------------------------------------------------
-// |      |  Q  |  W     |  E/GUI  |  R       |  T  |   |  Y  |  U        |  I/GUI   |  O      |  P  |      |
-// |      |  A  |  S/ALT |  D/CTRL |  F/SHIFT |  G  |   |  H  |  J/SHIFT  |  K/CTRL  |  L/ALT  |     |      |
-// |      |  Z  |  X     |  C      |  V       |  B  |   |  N  |  M        |  ,       |  .      |  /  |      |
-//                       | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+// |      |  Q       |  W     |  E/GUI  |  R       |  T  |   |  Y  |  U        |  I/GUI   |  O      |  P  |      |
+// |      |  A/CURS  |  S/ALT |  D/CTRL |  F/SHIFT |  G  |   |  H  |  J/SHIFT  |  K/CTRL  |  L/ALT  |     |      |
+// |      |  Z       |  X     |  C      |  V       |  B  |   |  N  |  M        |  ,       |  .      |  /  |      |
+//                                     | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
                         bindings = <
    &trans  &kp Q  &kp W  MY_E         &kp R  &kp T   &kp Y  &kp U    MY_I            &kp O    &kp P      &trans
-   &trans  &kp A  MY_S   MY_D         MY_F   &kp G   &kp H  MY_J     MY_K            MY_L     &kp SEMI   &trans
+   &trans  MY_A   MY_S   MY_D         MY_F   &kp G   &kp H  MY_J     MY_K            MY_L     &kp SEMI   &trans
    &trans  &kp Z  &kp X  &kp C        &kp V  &kp B   &kp N  &kp M    &kp COMMA       &kp DOT  &kp FSLH   &trans
                   &kp LGUI        &mo 1  &kp SPACE   &kp RET  &mo 2  &kp RALT
                         >;
                 };
+
+                // _CURS 1
                 lower_layer {
                         label = "NUMBER";
 // -----------------------------------------------------------------------------------------
