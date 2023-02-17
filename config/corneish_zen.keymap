@@ -19,25 +19,27 @@
 
 #define _BASE 0  // base keyboard
 #define _CURS 1  // cursors
-#define _NUM  2  //
-#define _SYMB 3
+#define _CO   2  // a layer complementar to _CURS
+#define _NUM  3  //
+#define _SYMB 4
 #define _FUNL 5
-#define _CO   6
 
 
-#define MY_E  &mt LGUI E
-#define MY_I  &mt RGUI I
 
-#define MY_D  &mt LCTRL D
-#define MY_K  &mt RCTRL K
+#define MY_E    &mt LGUI E
+#define MY_I    &mt RGUI I
 
-#define MY_F  &mt LSHIFT F
-#define MY_J  &mt RSHIFT J
+#define MY_D    &mt LCTRL D
+#define MY_K    &mt RCTRL K
 
-#define MY_S  &mt LALT S
-#define MY_L  &mt RALT L
+#define MY_F    &mt LSHIFT F
+#define MY_J    &mt RSHIFT J
 
-#define MY_A  &lt _CURS A
+#define MY_S    &mt LALT S
+#define MY_L    &mt RALT L
+
+#define MY_A    &lt _CURS A
+#define MY_SEMI &lt _CO SEMI
 
 
 / {
@@ -47,15 +49,15 @@
                 // _BASE 0
                 default_layer {
                         label = "QWERTY";
-// ----------------------------------------------------------------------------------------------------------
-// |      |  Q       |  W     |  E/GUI  |  R       |  T  |   |  Y  |  U        |  I/GUI   |  O      |  P  |      |
-// |      |  A/CURS  |  S/ALT |  D/CTRL |  F/SHIFT |  G  |   |  H  |  J/SHIFT  |  K/CTRL  |  L/ALT  |  ;  |      |
-// |      |  Z       |  X     |  C      |  V       |  B  |   |  N  |  M        |          |  .      |  /  |      |
+// -----------------------------------------------------------------------------------------------------------------
+// |      |  Q       |  W     |  E/GUI  |  R       |  T  |   |  Y  |  U        |  I/GUI   |  O      |  P    |      |
+// |      |  A/CURS  |  S/ALT |  D/CTRL |  F/SHIFT |  G  |   |  H  |  J/SHIFT  |  K/CTRL  |  L/ALT  |  ;/CO |      |
+// |      |  Z       |  X     |  C      |  V       |  B  |   |  N  |  M        |          |  .      |  /    |      |
 //                                     |      |    | SPC |   | ENT |      |     |
 
                         bindings = <
    &trans  &kp Q  &kp W  MY_E         &kp R  &kp T   &kp Y  &kp U    MY_I            &kp O    &kp P      &trans
-   &trans  MY_A   MY_S   MY_D         MY_F   &kp G   &kp H  MY_J     MY_K            MY_L     &kp SEMI   &trans
+   &trans  MY_A   MY_S   MY_D         MY_F   &kp G   &kp H  MY_J     MY_K            MY_L     MY_SEMI    &trans
    &trans  &kp Z  &kp X  &kp C        &kp V  &kp B   &kp N  &kp M    &kp COMMA       &kp DOT  &kp FSLH   &trans
                   &trans        &trans   &kp SPACE   &kp RET  &trans  &trans
                         >;
@@ -79,6 +81,25 @@
 
 
 
+                // _CO = 3
+                co_layer {
+                        label = "CO";
+
+// ------------------------------------------------------------------------------------------
+// |      |     |     |     |     |     |   |     |      |      |     |     |      |
+// |      |     |     |     |     |     |   |     |      |      |     |     |      |
+// |      |     |     |     |     |     |   |     |      |      |     |     |      |
+//                    |     |     |     |   |     |      |      |
+                        bindings = <
+   &trans     &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
+   &kp GRAVE  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
+   &trans     &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
+                          	        &trans     &trans       &trans      &trans  &trans   &trans
+                        >;
+                };
+
+
+                // EMPTY = 4
                 empty_layer {
                         label = "EMPTY";
 
@@ -97,6 +118,7 @@
 
 
 
+                // TBD = 5
                 raise_layer {
                         label = "SYMBOL";
 // -----------------------------------------------------------------------------------------
