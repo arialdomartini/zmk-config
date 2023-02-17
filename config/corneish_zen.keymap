@@ -50,14 +50,14 @@
 // ----------------------------------------------------------------------------------------------------------
 // |      |  Q       |  W     |  E/GUI  |  R       |  T  |   |  Y  |  U        |  I/GUI   |  O      |  P  |      |
 // |      |  A/CURS  |  S/ALT |  D/CTRL |  F/SHIFT |  G  |   |  H  |  J/SHIFT  |  K/CTRL  |  L/ALT  |  ;  |      |
-// |      |  Z       |  X     |  C      |  V       |  B  |   |  N  |  M        |  ,       |  .      |  /  |      |
-//                                     | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+// |      |  Z       |  X     |  C      |  V       |  B  |   |  N  |  M        |          |  .      |  /  |      |
+//                                     |      |    | SPC |   | ENT |      |     |
 
                         bindings = <
    &trans  &kp Q  &kp W  MY_E         &kp R  &kp T   &kp Y  &kp U    MY_I            &kp O    &kp P      &trans
    &trans  MY_A   MY_S   MY_D         MY_F   &kp G   &kp H  MY_J     MY_K            MY_L     &kp SEMI   &trans
    &trans  &kp Z  &kp X  &kp C        &kp V  &kp B   &kp N  &kp M    &kp COMMA       &kp DOT  &kp FSLH   &trans
-                  &kp LGUI        &mo 1  &kp SPACE   &kp RET  &mo 2  &kp RALT
+                  &trans        &trans   &kp SPACE   &kp RET  &trans  &trans
                         >;
                 };
 
