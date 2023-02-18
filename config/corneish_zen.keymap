@@ -53,15 +53,11 @@
 #define MY_BSPC  &lt _SYMB BSPC
 
 
-// &mt {
-//     flavor = "tap-preferred";
-//     tapping-term-ms = <4000>;
-//     quick-tap-ms = <2000>;
-//     global-quick-tap;
-//   };
-
 &mt {
-    tapping-term-ms = <4000>;
+    flavor = "tap-preferred";
+    tapping-term-ms = <150>;
+    quick-tap-ms = <120>;
+    global-quick-tap;
 };
 
 / {
