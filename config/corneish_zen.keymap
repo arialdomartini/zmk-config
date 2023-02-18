@@ -15,19 +15,6 @@
     zmk,matrix_transform = &default_transform;
     //zmk,matrix_transform = &five_column_transform;
   };
-
-  behaviors {
-    gqt: global-quick-tap {
-      compatible = "zmk,behavior-hold-tap";
-      label = "GLOBAL_QUICK_TAP";
-      #binding-cells = <2>;
-      flavor = "tap-preferred";
-      tapping-term-ms = <4000>;
-      quick-tap-ms = <2000>;
-      global-quick-tap;
-      bindings = <&kp>, <&kp>;
-    };
-  };
 };
 
 #define _BASE       0  // base keyboard
@@ -64,6 +51,18 @@
 
 #define MY_DEL  &lt _FUNL DEL
 #define MY_BSPC  &lt _SYMB BSPC
+
+
+// &mt {
+//     flavor = "tap-preferred";
+//     tapping-term-ms = <4000>;
+//     quick-tap-ms = <2000>;
+//     global-quick-tap;
+//   };
+
+&mt {
+    tapping-term-ms = <4000>;
+};
 
 / {
         keymap {
