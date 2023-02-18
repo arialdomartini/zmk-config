@@ -169,13 +169,13 @@
 
 // ------------------------------------------------------------------------------------------
 // |      |     |     |  <  |     |     |   |     |      |  >   |     |     |      |
-// |      |     |     |  [  |     |     |   |     |      |  ]   |     |     |      |
+// |      |     |     |  [  |  (  |     |   |     |  )   |  ]   |     |     |      |
 // |      |     |     |     |     |     |   |     |      |      |     |     |      |
 //                    |     |     |     |   |     |      |      |
                         bindings = <
-   &trans     &trans       &trans       &kp LT       &trans       &trans         &trans   &trans   &kp GT   &trans    &trans &trans
-   &trans     &trans       &trans       &kp LBKT     &trans       &trans         &trans   &trans   &kp RBKT &trans    &trans &trans
-   &trans     &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans   &trans    &trans &trans
+   &trans     &trans       &trans       &kp LT       &trans       &trans         &trans   &trans   &kp GT    &trans    &trans &trans
+   &trans     &trans       &trans       &kp LBKT     &kp LPAR     &trans         &trans   &trans   &kp RBKT  &kp RPAR  &trans &trans
+   &trans     &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans    &trans    &trans &trans
                           	        &trans     &trans       &trans      &trans  &trans   &trans
                         >;
                 };
