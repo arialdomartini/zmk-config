@@ -44,7 +44,7 @@
 #define MY_A       &lt _CURS A
 #define MY_SEMI    &lt _CO SEMI
 #define MY_SPC     &lt _NUM SPC
-#define MY_SPACE   &kp SPACE
+#define MY_SPACE   &lt _NUM SPACE
 #define MY_RET     &lt _NUM RET
 
 
