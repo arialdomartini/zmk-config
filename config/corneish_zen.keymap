@@ -168,14 +168,14 @@
                         label = "Symbols";
 
 // ------------------------------------------------------------------------------------------
-// |      |     |     |     |     |     |   |     |      |      |     |     |      |
+// |      |     |     |  <  |     |     |   |     |      |  >   |     |     |      |
 // |      |     |     |     |     |     |   |     |      |      |     |     |      |
 // |      |     |     |     |     |     |   |     |      |      |     |     |      |
 //                    |     |     |     |   |     |      |      |
                         bindings = <
-   &trans     &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-   &trans     &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-   &trans     &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
+   &trans     &trans       &trans       &kp LT       &trans       &trans         &trans   &trans   &kp GT  &trans    &trans &trans
+   &trans     &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans  &trans    &trans &trans
+   &trans     &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans  &trans    &trans &trans
                           	        &trans     &trans       &trans      &trans  &trans   &trans
                         >;
                 };
