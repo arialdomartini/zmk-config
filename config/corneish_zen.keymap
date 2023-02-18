@@ -92,12 +92,12 @@
 // ------------------------------------------------------------------------------------------
 // |      |     |     |     |     |     |   |     | Home |   ^  | End | Ins |      |
 // |      |     |     |     |     |     |   |     | <--  | Down | --> |  '  |      |
-// |      |     |     |     |     |     |   |     | PgDn | CAPS | PgUp|  \  |      |
+// |      |     |     |     |     |     |   |     | PgUp | CAPS | PgDn|  \  |      |
 //                  |     |     |     |       |      | Tab   |      |
                         bindings = <
    &trans     &trans       &trans       &trans       &trans       &trans         &trans  &kp HOME   &kp UP    &kp END    &kp INS             &trans
    &trans     &trans       &trans       &trans       &trans       &trans         &trans  &kp LEFT   &kp DOWN  &kp RIGHT  &kp SINGLE_QUOTE    &trans
-   &trans     &trans       &trans       &trans       &trans       &trans         &trans  &kp PG_DN  &kp CAPS  &kp PG_UP  &kp BACKSLASH       &trans
+   &trans     &trans       &trans       &trans       &trans       &trans         &trans  &kp PG_UP  &kp CAPS  &kp PG_DN  &kp BACKSLASH       &trans
                           	         &trans  &trans  &trans       &kp RET  &kp TAB   &trans
                         >;
                 };
