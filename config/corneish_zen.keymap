@@ -18,13 +18,13 @@
 };
 
 
-#define _BASE      0  // base keyboard
-#define _CURS      1  // cursors
-#define _CO        2  // a layer complementar to _CURS
-#define _NUM       3  // numbers and operations
-#define _BLUETOOTH 4  // layer to manage blue tooth connection
-#define _FUNL 5
-#define _SYMB 6
+#define _BASE       0  // base keyboard
+#define _CURS       1  // cursors
+#define _CO         2  // a layer complementar to _CURS
+#define _NUM        3  // numbers and operations
+#define _BLUETOOTH  4  // layer to manage blue tooth connection
+#define _FUNL       5  // Function keys
+#define _SYMB       6  // Parenthesis
 
 
 
@@ -45,7 +45,7 @@
 #define MY_SEMI    &lt _CO SEMI
 #define MY_SPC     &lt _NUM SPC
 #define MY_SPACE   &kp SPACE
-#define MY_RET     &kp RET
+#define MY_RET     &lt _NUM RET
 
 
 
