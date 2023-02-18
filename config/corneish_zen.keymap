@@ -23,8 +23,9 @@
 #define _CO        2  // a layer complementar to _CURS
 #define _NUM       3  // numbers and operations
 #define _BLUETOOTH 4  // layer to manage blue tooth connection
-#define _SYMB 5
-#define _FUNL 6
+#define _FUNL 5
+#define _SYMB 6
+
 
 
 
@@ -43,6 +44,8 @@
 #define MY_A    &lt _CURS A
 #define MY_SEMI &lt _CO SEMI
 
+#define MY_DEL  &lt _FUNC DEL
+
 
 / {
         keymap {
@@ -51,17 +54,17 @@
                 // _BASE 0
                 default_layer {
                         label = "QWERTY";
-// -----------------------------------------------------------------------------------------------------------------
+// ------------------------------------------------------`   '-------------------------------------------------------
 // |      |  Q       |  W     |  E/GUI  |  R       |  T  |   |  Y  |  U        |  I/GUI   |  O      |  P    |      |
 // |      |  A/CURS  |  S/ALT |  D/CTRL |  F/SHIFT |  G  |   |  H  |  J/SHIFT  |  K/CTRL  |  L/ALT  |  ;/CO |      |
 // |      |  Z       |  X     |  C      |  V       |  B  |   |  N  |  M        |          |  .      |  /    |      |
-//                            | Bluetooth    |    | SPC |     | ENT |      |     |
+//                        | Bluetooth   |  BSPC | SPC |       | ENT | DEL/FUNL  |     |
 
                         bindings = <
    &trans  &kp Q  &kp W  MY_E         &kp R  &kp T   &kp Y  &kp U    MY_I            &kp O    &kp P      &trans
    &trans  MY_A   MY_S   MY_D         MY_F   &kp G   &kp H  MY_J     MY_K            MY_L     MY_SEMI    &trans
    &trans  &kp Z  &kp X  &kp C        &kp V  &kp B   &kp N  &kp M    &kp COMMA       &kp DOT  &kp FSLH   &trans
-                  &mo _BLUETOOTH        &trans   &kp SPACE   &kp RET  &trans  &trans
+                  &mo _BLUETOOTH        &kp BSPC   &kp SPACE   &kp RET  MY_DEL  &trans
                         >;
                 };
 
@@ -83,7 +86,7 @@
 
 
 
-                // _CO = 3
+                // _CO = 2
                 co_layer {
                         label = "CO";
 
@@ -101,7 +104,7 @@
                 };
 
 
-                // _NUM = 4
+                // _NUM = 3
                 numbers_layer {
                         label = "Numbers";
 
@@ -119,7 +122,7 @@
                 };
 
 
-                // _BLUETOOTH = 5
+                // _BLUETOOTH = 4
                 bluetooth_layer {
                         label = "Bluetooth";
 
@@ -133,6 +136,24 @@
    &trans     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 3  &bt BT_SEL 4  &trans         &trans   &trans   &trans &trans    &trans &trans
    &trans     &bt BT_CLR    &trans        &trans        &trans        &trans         &trans   &trans   &trans &trans    &trans &trans
                           	        &trans     &trans       &trans      &trans  &trans   &trans
+                        >;
+                };
+
+
+                // _FUNCTION = 5
+                function_layer {
+                        label = "fun";
+
+// ------------------------------------------------------------------------------------------
+// |      |     |     |     |     |     |   |     |      |      |     |     |      |
+// |      | F1  | F2  | F3  | F4  | F5  |   | F6  | F7   |  F8  | F9  | F0  |      |
+// |      | F11 | F12 |     |     |     |   |     |      |      |     |     |      |
+//                    |     | Esc |     |   |     |      |      |
+                        bindings = <
+   &trans     &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans   &trans    &trans   &trans
+   &trans     &kp F1       &kp F2       &kp F3       &kp F4       &kp F5         &kp F6   &kp F7   &kp F8   &kp F9    &kp F10  &trans
+   &trans     &kp F11      &kp F12      &trans       &trans       &trans         &trans   &trans   &trans   &trans    &trans   &trans
+                          	                  &trans    &kp ESC     &trans      &trans  &trans   &trans
                         >;
                 };
 
