@@ -44,6 +44,9 @@
 #define MY_A       &lt _CURS A
 #define MY_SEMI    &lt _CO SEMI
 #define MY_SPC     &lt _NUM SPC
+#define MY_SPACE   &kp SPACE
+#define MY_RET     &kp RET
+
 
 
 
@@ -61,13 +64,13 @@
 // |      |  Q       |  W     |  E/GUI  |  R       |  T  |   |  Y  |  U        |  I/GUI   |  O      |  P    |      |
 // |      |  A/CURS  |  S/ALT |  D/CTRL |  F/SHIFT |  G  |   |  H  |  J/SHIFT  |  K/CTRL  |  L/ALT  |  ;/CO |      |
 // |      |  Z       |  X     |  C      |  V       |  B  |   |  N  |  M        |          |  .      |  /    |      |
-//                  | Bluetooth   | BSPC/SYMB | MY_SPC |       | ENT | DEL/FUNL  |     |
+//                  | Bluetooth   | BSPC/SYMB | SPACE |       | ENT | DEL/FUNL  |     |
 
                         bindings = <
    &trans  &kp Q  &kp W  MY_E         &kp R  &kp T   &kp Y  &kp U    MY_I            &kp O    &kp P      &trans
    &trans  MY_A   MY_S   MY_D         MY_F   &kp G   &kp H  MY_J     MY_K            MY_L     MY_SEMI    &trans
    &trans  &kp Z  &kp X  &kp C        &kp V  &kp B   &kp N  &kp M    &kp COMMA       &kp DOT  &kp FSLH   &trans
-                  &mo _BLUETOOTH        MY_BSPC   &kp SPACE   &kp RET  MY_DEL  &trans
+                  &mo _BLUETOOTH        MY_BSPC    MY_SPACE   MY_RET   MY_DEL  &trans
                         >;
                 };
 
