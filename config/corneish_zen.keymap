@@ -168,14 +168,14 @@
                         label = "Symbols";
 
 // ------------------------------------------------------------------------------------------
-// |      |     |     |  <  |     |     |   |     |  _   |  >   |  ~  |     |      |
-// |      |     |  {  |  [  |  (  |     |   |     |  )   |  ]   |   } |     |      |
-// |      |     |     |     |     |     |   |     |      |      |     |     |      |
+// |      |     |     |  <  |     |     |   |     |  _   |  >   |  ~  |  |  |      |
+// |      |     |  {  |  [  |  (  |     |   |     |  )   |  ]   |   } |  *  |      |
+// |      |     |     |     |     |     |   |     |      |      |     |  \  |      |
 //                    |     |     |     |   |     |      |      |
                         bindings = <
-   &trans     &trans       &trans       &kp LT       &trans       &trans         &trans   &kp UNDER  &kp GT    &kp TILDE  &trans    &trans
-   &trans     &trans       &kp LBRC     &kp LBKT     &kp LPAR     &trans         &trans   &kp RPAR   &kp RBKT  &kp RBRC   &trans    &trans
-   &trans     &trans       &trans       &trans       &trans       &trans         &trans   &trans     &trans    &trans     &trans    &trans
+   &trans     &trans       &trans       &kp LT       &trans       &trans         &trans   &kp UNDER  &kp GT    &kp TILDE  &kp PIPE    &trans
+   &trans     &trans       &kp LBRC     &kp LBKT     &kp LPAR     &trans         &trans   &kp RPAR   &kp RBKT  &kp RBRC   &kp STAR    &trans
+   &trans     &trans       &trans       &trans       &trans       &trans         &trans   &trans     &trans    &trans     &kp BSLH    &trans
                           	        &trans     &trans       &trans      &trans  &trans   &trans
                         >;
                 };
