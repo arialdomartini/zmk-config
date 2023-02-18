@@ -21,9 +21,9 @@
       compatible = "zmk,behavior-hold-tap";
       label = "GLOBAL_QUICK_TAP";
       #binding-cells = <2>;
-      flavor = "balanced";
-      tapping-term-ms = <250>;
-      quick-tap-ms = <120>;
+      flavor = "tap-preferred";
+      tapping-term-ms = <200>;
+      #quick-tap-ms = <120>;
       global-quick-tap;
       bindings = <&kp>, <&kp>;
     };
