@@ -77,7 +77,7 @@
    &trans  &kp Q  &kp W  MY_E         &kp R  &kp T      &kp Y  &kp U    MY_I            &kp O    &kp P      &trans
    &trans  MY_A   MY_S   MY_D         MY_F   &kp G      &kp H  MY_J     MY_K            MY_L     MY_SEMI    &trans
    &trans  &kp Z  &kp X  &kp C        &kp V  &kp B      &kp N  &kp M    &kp COMMA       &kp DOT  &kp FSLH   &trans
-                      &mo _BLUETOOTH        MY_BSPC    MY_RET  MY_SPACE   MY_DEL  &trans
+                      &to _BLUETOOTH        MY_BSPC    MY_RET  MY_SPACE   MY_DEL  &trans
                         >;
                 };
 
@@ -148,7 +148,7 @@
    &trans     &bt OUT_TOG   &trans        &trans        &trans        &trans         &trans   &trans   &trans &trans    &trans &trans
    &trans     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4   &trans   &trans   &trans &trans    &trans &trans
    &trans     &bt BT_CLR    &trans        &trans        &trans        &trans         &trans   &trans   &trans &trans    &trans &trans
-                          	        &trans     &trans       &trans      &trans  &trans   &trans
+                          	    &to _BASE     &trans       &trans      &trans  &trans   &trans
                         >;
                 };
 
