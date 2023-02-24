@@ -30,13 +30,16 @@
 // Left hand
 #define MY_S       &mt LALT S
 #define MY_2       &mt LALT N2
+#define MY_F2      &mt LALT F2
 
 
 #define MY_D       &mt LCTRL D
 #define MY_3       &mt LCTRL N3
+#define MY_F3       &mt LCTRL F3
 
 #define MY_F       &mt LSHIFT F
 #define MY_4       &mt LSHIFT N4
+#define MY_F4       &mt LSHIFT F4
 
 
 #define MY_E       &mt LGUI E
@@ -44,12 +47,15 @@
 // Right hand
 #define MY_J       &mt RSHIFT J
 #define MY_7       &mt RSHIFT N7
+#define MY_F7      &mt RSHIFT F7
 
 #define MY_K       &mt RCTRL K
 #define MY_8       &mt RCTRL N8
+#define MY_F8       &mt RCTRL F8
 
 #define MY_L       &mt RALT L
 #define MY_9       &mt RALT N9
+#define MY_F9       &mt RALT F9
 
 #define MY_I       &mt RGUI I
 
@@ -177,7 +183,7 @@
 //                    |     | Esc |     |   |     |      |      |
                         bindings = <
    &trans     &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans   &trans    &trans   &trans
-   &trans     &kp F1       &kp F2       &kp F3       &kp F4       &kp F5         &kp F6   &kp F7   &kp F8   &kp F9    &kp F10  &trans
+   &trans     &kp F1       MY_F2        MY_F3        MY_F4        &kp F5         &kp F6   MY_F7    MY_F8    MY_F9    &kp F10  &trans
    &trans     &kp F11      &kp F12      &trans       &trans       &trans         &trans   &trans   &trans   &trans    &trans   &trans
                           	                  &trans    &kp ESC     &trans      &trans  &trans   &trans
                         >;
