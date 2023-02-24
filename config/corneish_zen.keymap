@@ -110,7 +110,7 @@
 //                    |     |     |     |   |     |      |      |
                         bindings = <
    &trans     &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-   &kp GRAVE  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
+   &trans     &kp GRAVE    &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
    &trans     &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
                           	        &trans     &trans       &trans      &trans  &trans   &trans
                         >;
