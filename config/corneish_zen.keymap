@@ -179,12 +179,12 @@
 // ------------------------------------------------------------------------------------------
 // |      |     |     |     |     |     |   |     |      |      |     |     |      |
 // |      | F1  | F2  | F3  | F4  | F5  |   | F6  | F7   |  F8  | F9  | F0  |      |
-// |      | F11 | F12 |     |     |     |   |     |      |      |     |     |      |
+// |      | F11 | F12 | F14 | F15 | F16 |   | F17 | F18  |  F19 | F20 | F20 |      |
 //                    |     | Esc |     |   |     |      |      |
                         bindings = <
-   &trans     &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans   &trans    &trans   &trans
+   &trans     &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans   &trans   &trans   &trans
    &trans     &kp F1       MY_F2        MY_F3        MY_F4        &kp F5         &kp F6   MY_F7    MY_F8    MY_F9    &kp F10  &trans
-   &trans     &kp F11      &kp F12      &trans       &trans       &trans         &trans   &trans   &trans   &trans    &trans   &trans
+   &trans     &kp F11      &kp F12      &kp F13      &kp F14      &kp F15        &kp F16  &kp F17  &kp F18  &kp F19  &kp F20  &trans
                           	                  &trans    &kp ESC     &trans      &trans  &trans   &trans
                         >;
                 };
