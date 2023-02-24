@@ -27,6 +27,9 @@
 
 
 
+// Left hand
+#define MY_S       &mt LALT S
+#define MY_2       &mt LALT N2
 
 #define MY_E       &mt LGUI E
 #define MY_I       &mt RGUI I
@@ -37,7 +40,7 @@
 #define MY_F       &mt LSHIFT F
 #define MY_J       &mt RSHIFT J
 
-#define MY_S       &mt LALT S
+
 #define MY_L       &mt RALT L
 
 #define MY_A       &lt _CURS A
@@ -128,7 +131,7 @@
 //                    |     |     |     |   |     |      |      |
                         bindings = <
    &trans     &kp EXCL     &kp AT       &kp HASH     &kp DLLR     &kp PERCENT    &trans   &kp MINUS   &kp EQUAL   &kp PLUS  &kp STAR   &trans
-   &trans     &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7      &kp N8      &kp N9    &kp N0     &trans
+   &trans     &kp N1       MY_2         &kp N3       &kp N4       &kp N5         &kp N6   &kp N7      &kp N8      &kp N9    &kp N0     &trans
    &trans     &kp CARET    &kp AMPS     &trans       &trans       &trans         &trans   &trans      &trans      &trans    &trans     &trans
                           	            &trans     &trans        &trans             &trans    &trans     &trans
                         >;
