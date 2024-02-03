@@ -103,14 +103,14 @@
                         label = "Arialdo";
 // ------------------------------------------------------------------------------------------
 // |      |     |     |     |     |     |   |     | Home |   ^  | End | `   |      |
-// |      |     |     |     |     |     |   |     | <--  | Down | --> |  '  |      |
+// |      |     |     |     |     |     |   | Ins | <--  | Down | --> |  '  |      |
 // |      |     |     |     |     |     |   |     | PgUp | CAPS | PgDn|  \  |      |
 //                  |     |     |     |       |      | Tab   |      |
                         bindings = <
-   &trans     &trans       &trans       &trans       &trans       &trans         &trans  &kp HOME   &kp UP    &kp END    &kp GRAVE           &trans
-   &trans     &trans       &trans       &trans       &trans       &trans         &trans  &kp LEFT   &kp DOWN  &kp RIGHT  &kp SINGLE_QUOTE    &trans
-   &trans     &trans       &trans       &trans       &trans       &trans         &trans  &kp PG_UP  &kp CAPS  &kp PG_DN  &kp BACKSLASH       &trans
-                          	         &trans  &trans  &trans       &kp RET  &kp TAB   &trans
+   &trans     &trans       &trans       &trans       &trans       &trans         &trans   &kp HOME   &kp UP    &kp END    &kp GRAVE           &trans
+   &trans     &trans       &trans       &trans       &trans       &trans         &kp INS  &kp LEFT   &kp DOWN  &kp RIGHT  &kp SINGLE_QUOTE    &trans
+   &trans     &trans       &trans       &trans       &trans       &trans         &trans   &kp PG_UP  &kp CAPS  &kp PG_DN  &kp BACKSLASH       &trans
+                          	         &trans  &trans  &trans       &kp RET  &kp TAB    &trans
                         >;
                 };
 
