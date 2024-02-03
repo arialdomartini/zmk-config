@@ -89,7 +89,7 @@
 // |      |  Q       |  W     |  E      |  R       |  T  |   |  Y  |  U        |  I       |  O      |  P    |      |
 // |      |  A/GUI   |  S/ALT |  D/CTRL |  F/SHIFT |  G  |   |  H  |  J/SHIFT  |  K/CTRL  |  L/ALT  | ;/GUI |      |
 // |      |  Z       |  X     |  C      |  V       |  B  |   |  N  |  M        |          |  .      |  /    |      |
-//                  | Bluetooth   | BSPC/SYMB | RET/CUR |       | ENT | DEL/FUNL  |     |
+//                  | Bluetooth   | BSPC/SYMB | RET/CUR |  | SPACE/NUM | DEL/FUNL  |     |
 
                         bindings = <
    &trans  &kp Q  &kp W  &kp E        &kp R  &kp T         &kp Y  &kp U    &kp I          &kp O    &kp P      &trans
