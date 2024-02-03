@@ -19,11 +19,10 @@
 
 #define _BASE       0  // base keyboard
 #define _CURS       1  // cursors
-#define _CO         2  // a layer complementar to _CURS
-#define _NUM        3  // numbers and operations
-#define _BLUETOOTH  4  // layer to manage blue tooth connection
-#define _FUNL       5  // Function keys
-#define _SYMB       6  // Parenthesis
+#define _NUM        2  // numbers and operations
+#define _BLUETOOTH  3  // layer to manage blue tooth connection
+#define _FUNL       4  // Function keys
+#define _SYMB       5  // Parenthesis
 
 
 
@@ -112,25 +111,6 @@
    &trans     &trans       &trans       &trans       &trans       &trans         &kp INS  &kp LEFT   &kp DOWN  &kp RIGHT  &kp SINGLE_QUOTE    &trans
    &trans     &trans       &trans       &trans       &trans       &trans         &trans   &kp PG_UP  &kp CAPS  &kp PG_DN  &kp BACKSLASH       &trans
                           	         &trans  &trans  &trans       &kp RET  &kp TAB    &trans
-                        >;
-                };
-
-
-
-                // _CO = 2
-                co_layer {
-                        label = "Arialdo";
-
-// ------------------------------------------------------------------------------------------
-// |      |     |     |     |     |     |   |     |      |      |     |     |      |
-// |  `   |     |     |     |     |     |   |     |      |      |     |     |      |
-// |      |     |     |     |     |     |   |     |      |      |     |     |      |
-//                    |     |     |     |   |     |      |      |
-                        bindings = <
-   &trans     &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-   &trans     &kp GRAVE    &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-   &trans     &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                          	        &trans     &trans       &trans      &trans  &trans   &trans
                         >;
                 };
 
