@@ -69,6 +69,30 @@
 #define MY_BSPC  &lt _SYMB BSPC
 
 
+/ {
+    macros {
+        arrow: arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp MINUS &kp GT>
+                ;
+        };
+    };
+};
+/ {
+    macros {
+        fat_arrow: fat_arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp EQUAL &kp GT>
+                ;
+        };
+    };
+};
+
+
 &mt {
     flavor = "tap-preferred";
     tapping-term-ms = <150>;
@@ -101,14 +125,14 @@
                 cursors_layer {
                         label = "Arialdo";
 // -------------------------------------------------------------------
-// |     |     |     |     |     |   |     | Home |   ^  | End | `   |
+// |     |     |     |     |     |   | =>  | Home |   ^  | End | `   |
 // |     |     |     |     |     |   | Ins | <--  | Down | --> |  '  |
 // |     |     |     |     |     |   |     | PgUp | CAPS | PgDn|  \  |
 //           |     |     |     |       |      | Tab   |      |
                         bindings = <
-   &trans     &trans       &trans       &trans       &trans       &trans         &trans   &kp HOME   &kp UP    &kp END    &kp GRAVE           &trans
-   &trans     &trans       &trans       &trans       &trans       &trans         &kp INS  &kp LEFT   &kp DOWN  &kp RIGHT  &kp SINGLE_QUOTE    &trans
-   &trans     &trans       &trans       &trans       &trans       &trans         &trans   &kp PG_UP  &kp CAPS  &kp PG_DN  &kp BACKSLASH       &trans
+   &trans     &trans       &trans       &trans       &trans       &trans         &fat_arrow  &kp HOME   &kp UP    &kp END    &kp GRAVE           &trans
+   &trans     &trans       &trans       &trans       &trans       &trans         &kp INS         &kp LEFT   &kp DOWN  &kp RIGHT  &kp SINGLE_QUOTE    &trans
+   &trans     &trans       &trans       &trans       &trans       &trans         &trans          &kp PG_UP  &kp CAPS  &kp PG_DN  &kp BACKSLASH       &trans
                           	         &trans  &trans  &trans       &kp RET  &kp TAB    &trans
                         >;
                 };
@@ -169,21 +193,20 @@
 
 
 
-
                 // _SYMB = 6
                 symbols_layer {
                         label = "Arialdo";
 
 // -------------------------------------------------------------------
-// |     |     |     |     |     |   |     |  _   |  *   |  ~  |  |  |
+// |     |     |     |     |     |   |  -> |  _   |  *   |  ~  |  |  |
 // |  <  |  {  |  [  |  (  |     |   |     |  )   |  ]   |   } |  >  |
 // |     |     |     |     |     |   |     |      |      |     |  \  |
 //                    |     |     |     |   |     |      |      |
                         bindings = <
-   &trans     &trans       &trans       &trans       &trans       &trans         &trans   &kp UNDER  &kp STAR    &kp TILDE  &kp PIPE    &trans
-   &trans     &kp LT       &kp LBRC     &kp LBKT     &kp LPAR     &trans         &trans   &kp RPAR   &kp RBKT  &kp RBRC   &kp GT    &trans
-   &trans     &trans       &trans       &trans       &trans       &trans         &trans   &trans     &trans    &trans     &kp BSLH    &trans
-                          	        &trans     &trans       &trans      &trans  &trans   &trans
+   &trans     &trans       &trans       &trans       &trans       &trans         &arrow      &kp UNDER  &kp STAR    &kp TILDE  &kp PIPE    &trans
+   &trans     &kp LT       &kp LBRC     &kp LBKT     &kp LPAR     &trans         &trans      &kp RPAR   &kp RBKT  &kp RBRC   &kp GT    &trans
+   &trans     &trans       &trans       &trans       &trans       &trans         &trans      &trans     &trans    &trans     &kp BSLH    &trans
+                          	        &trans     &trans       &trans      &trans  &trans      &trans
                         >;
                 };
 
