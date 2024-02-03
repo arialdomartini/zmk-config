@@ -51,16 +51,17 @@
 
 #define MY_K       &mt RCTRL K
 #define MY_8       &mt RCTRL N8
-#define MY_F8       &mt RCTRL F8
+#define MY_F8      &mt RCTRL F8
 
 #define MY_L       &mt RALT L
 #define MY_9       &mt RALT N9
-#define MY_F9       &mt RALT F9
+#define MY_F9      &mt RALT F9
 
 #define MY_I       &mt RGUI I
 
-#define MY_A       &lt _CURS A
-#define MY_SEMI    &lt _CO SEMI
+#define MY_A       &mt LGUI A
+#define MY_SEMI    &mt RGUI SEMI
+
 #define MY_SPC     &lt _NUM SPC
 #define MY_SPACE   &lt _NUM SPACE
 #define MY_RET     &lt _NUM RET
@@ -86,7 +87,7 @@
                         label = "Arialdo";
 // ------------------------------------------------------`   '-------------------------------------------------------
 // |      |  Q       |  W     |  E/GUI  |  R       |  T  |   |  Y  |  U        |  I/GUI   |  O      |  P    |      |
-// |      |  A/CURS  |  S/ALT |  D/CTRL |  F/SHIFT |  G  |   |  H  |  J/SHIFT  |  K/CTRL  |  L/ALT  |  ;/CO |      |
+// |      |  A/GUI   |  S/ALT |  D/CTRL |  F/SHIFT |  G  |   |  H  |  J/SHIFT  |  K/CTRL  |  L/ALT  | ;/GUI |      |
 // |      |  Z       |  X     |  C      |  V       |  B  |   |  N  |  M        |          |  .      |  /    |      |
 //                  | Bluetooth   | BSPC/SYMB | SPACE |       | ENT | DEL/FUNL  |     |
 
