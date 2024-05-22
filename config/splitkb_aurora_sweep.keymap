@@ -1,0 +1,86 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/mouse.h>
+
+&mt {
+    // tapping-term-ms = <200>;
+
+    flavor = "balanced";
+    quick-tap-ms = <200>;
+};
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+        caps_word {
+            bindings = <&caps_word>;
+            key-positions = <18 19>;
+            layers = <0>;
+        };
+
+        esc {
+            bindings = <&kp ESCAPE>;
+            key-positions = <16 17>;
+            layers = <0>;
+        };
+
+        del {
+            bindings = <&kp DEL>;
+            key-positions = <26 27>;
+            layers = <0>;
+        };
+    };
+
+    behaviors {
+        bsp_del: bsp_del {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BSP_DEL";
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            bindings = <
+&mt ESCAPE Q      &kp W               &kp E           &kp R            &kp T    &kp Y  &kp U            &kp I           &kp O               &kp P
+&mt LEFT_SHIFT A  &mt LEFT_CONTROL S  &mt LEFT_ALT D  &mt LEFT_META F  &kp G    &kp H  &mt LEFT_META J  &mt LEFT_ALT K  &mt LEFT_CONTROL L  &mt LEFT_SHIFT SEMI
+&kp Z             &kp X               &kp C           &kp V            &kp B    &kp N  &kp M            &kp COMMA       &kp DOT             &kp SLASH
+&lt 3 TAB         &lt 1 SPACE                                                                                           &lt 2 ENTER         &bsp_del
+            >;
+        };
+
+        left_layer {
+            bindings = <
+&kp LESS_THAN   &kp GREATER_THAN  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp AMPS     &kp PLUS   &kp N7  &kp N8  &kp N9  &kp ASTERISK
+&kp LEFT_SHIFT  &none             &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp PIPE     &kp MINUS  &kp N4  &kp N5  &kp N6  &kp SINGLE_QUOTE
+&kp BACKSLASH   &kp UNDERSCORE    &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp GRAVE    &kp EQUAL  &kp N1  &kp N2  &kp N3  &kp SLASH
+&to 0           &trans                                                                                                 &kp N0  &kp DOT
+            >;
+        };
+
+        right_layer {
+            bindings = <
+&none           &kp F7               &kp F8           &kp F9           &kp F10    &kp PAGE_UP    &kp HOME   &kp UP     &kp END    &to 1
+&kp LEFT_SHIFT  &mt LEFT_CONTROL F4  &mt LEFT_ALT F5  &mt LEFT_GUI F6  &kp F11    &kp PAGE_DOWN  &kp LEFT   &kp DOWN   &kp RIGHT  &caps_word
+&none           &kp F1               &kp F2           &kp F3           &kp F12    &none          &mkp LCLK  &kp K_APP  &mkp RCLK  &none
+&none           &none                                                                                                  &trans     &none
+            >;
+        };
+
+        tri_layer {
+            bindings = <
+&sys_reset  &bt BT_CLR_ALL  &none  &none  &none    &kp C_VOLUME_UP    &kp C_NEXT        &none  &none   &none
+&none       &none           &none  &none  &none    &kp C_VOLUME_DOWN  &kp C_PREV        &none  &none   &none
+&none       &none           &none  &none  &none    &kp C_MUTE         &kp C_PLAY_PAUSE  &none  &none   &none
+&none       &trans                                                                             &trans  &none
+            >;
+        };
+    };
+};
