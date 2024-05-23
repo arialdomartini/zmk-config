@@ -62,6 +62,20 @@
 #define MY_BSPC  &lt _SYMB BSPC
 
 
+// Press Cursors + Q + W to activate the Bluetooth layer
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_bluetooth {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            layers = <1>;
+            bindings = <&mo _BLUETOOTH>;
+        };
+    };
+};
+
+
 / {
     macros {
         arrow: arrow {
@@ -131,7 +145,7 @@
                 };
 
 
-                // _NUM = 3
+                // _NUM = 2
                 numbers_layer {
                         label = "Arialdo";
 
@@ -149,7 +163,7 @@
                 };
 
 
-                // _BLUETOOTH = 4
+                // _BLUETOOTH = 3
                 bluetooth_layer {
                         label = "Bluetooth";
 
@@ -167,7 +181,7 @@
                 };
 
 
-                // _FUNCTION = 5
+                // _FUNCTION = 4
                 function_layer {
                         label = "Arialdo";
 
@@ -186,7 +200,7 @@
 
 
 
-                // _SYMB = 6
+                // _SYMB = 5
                 symbols_layer {
                         label = "Arialdo";
 
@@ -204,7 +218,7 @@
                 };
 
 
-                // EMPTY = 7
+                // EMPTY = 6
                 empty_layer {
                         label = "EMPTY";
 
