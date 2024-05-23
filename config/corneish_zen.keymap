@@ -138,7 +138,7 @@
                 };
 
 
-                // _NUM = 3
+                // _NUM = 2
                 numbers_layer {
                         label = "Arialdo";
 
@@ -156,7 +156,7 @@
                 };
 
 
-                // _BLUETOOTH = 4
+                // _BLUETOOTH = 3
                 bluetooth_layer {
                         label = "Bluetooth";
 
@@ -174,7 +174,7 @@
                 };
 
 
-                // _FUNCTION = 5
+                // _FUNCTION = 4
                 function_layer {
                         label = "Arialdo";
 
@@ -193,7 +193,7 @@
 
 
 
-                // _SYMB = 6
+                // _SYMB = 5
                 symbols_layer {
                         label = "Arialdo";
 
@@ -211,7 +211,7 @@
                 };
 
 
-                // EMPTY = 7
+                // EMPTY = 6
                 empty_layer {
                         label = "EMPTY";
 
