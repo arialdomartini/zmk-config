@@ -92,6 +92,17 @@
                 = <&macro_tap &kp EQUAL &kp GT>
                 ;
         };
+
+
+        cotab: cotab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap &kp TAB>
+                , <&macro_release &kp LSHFT>
+                ;
+        };
     };
 };
 
@@ -190,7 +201,7 @@
       &kp F11      &kp F12      &kp F13      &kp F14      &kp F15        &kp F16  &kp F17  &kp F18  &kp F19  &kp F20
       &kp F1       MY_F2        MY_F3        MY_F4        &kp F5         &kp F6   MY_F7    MY_F8    MY_F9    &kp F10
       &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans   &trans   &trans
-                          	                         &kp ESC     &trans      &trans  &trans
+                          	            &kp ESC     &cotab      &trans  &trans
                         >;
                 };
 
