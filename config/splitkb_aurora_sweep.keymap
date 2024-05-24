@@ -60,37 +60,18 @@
 #define MY_DEL     &lt _FUNL DEL
 #define MY_BSPC    &lt _SYMB BSPC
 
-
-// Press Cursors + Q + W to activate the Bluetooth layer
-/ {
-    combos {
-        compatible = "zmk,combos";
-        combo_bluetooth {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            layers = <1>;
-            bindings = <&mo _BLUETOOTH>;
-        };
-    };
-};
-
-
 / {
     macros {
         arrow: arrow {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp MINUS &kp GT>
-                ;
+            bindings = <&macro_tap &kp MINUS &kp GT>;
         };
         
         fat_arrow: fat_arrow {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp EQUAL &kp GT>
-                ;
+            bindings = <&macro_tap &kp EQUAL &kp GT>;
         };
 
 
@@ -103,6 +84,16 @@
                 , <&macro_release &kp LSHFT>
                 ;
         };
+
+        go_blue: go_blue {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp B &kp T>
+                , <&to _BLUETOOTH>
+                ;
+        };
+
     };
 };
 
@@ -139,14 +130,14 @@
                 cursors_layer {
                         label = "Arialdo";
 // -------------------------------------------------------------------
-// |     |     |     |     |     |   | =>  | Home |   ^  | End | `   |
+// |BLUTH|     |     |     |     |   | =>  | Home |   ^  | End | `   |
 // |     |     |     |     |     |   | Ins | <--  | Down | --> |  '  |
 // |     |     |     |     |     |   |     | PgUp | CAPS | PgDn|  \  |
 //           |     |     |     |       |      | Tab   |      |
                         bindings = <
-      &trans       &trans       &trans       &trans       &trans         &fat_arrow  &kp HOME   &kp UP    &kp END    &kp GRAVE
-      &trans       &trans       &trans       &trans       &trans         &kp INS         &kp LEFT   &kp DOWN  &kp RIGHT  &kp SINGLE_QUOTE
-      &trans       &trans       &trans       &trans       &trans         &trans          &kp PG_UP  &kp CAPS  &kp PG_DN  &kp BACKSLASH
+      &go_blue   &trans       &trans       &trans       &trans         &fat_arrow  &kp HOME   &kp UP    &kp END    &kp GRAVE
+      &trans     &trans       &trans       &trans       &trans         &kp INS         &kp LEFT   &kp DOWN  &kp RIGHT  &kp SINGLE_QUOTE
+      &trans     &trans       &trans       &trans       &trans         &trans          &kp PG_UP  &kp CAPS  &kp PG_DN  &kp BACKSLASH
                           	                &trans  &trans       &kp RET  &kp TAB
                         >;
                 };
@@ -180,10 +171,10 @@
 // | CLR |     |     |     |     |   |     |      |      |     |     |
 //                    |     |     |     |   |     |      |      |
                         bindings = <
-   &trans     &out OUT_TOG   &trans        &trans        &trans        &trans         &trans   &trans   &trans &trans    &trans &trans
-   &trans     &bt  BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4   &trans   &trans   &trans &trans    &trans &trans
-   &trans     &bt  BT_CLR    &trans        &trans        &trans        &trans         &trans   &trans   &trans &trans    &trans &trans
-                          	    &trans     &trans       &trans      &trans  &trans   &trans
+   &out OUT_TOG   &trans        &trans        &trans        &trans         &trans   &trans   &trans &trans    &trans
+   &bt  BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4   &trans   &trans   &trans &trans    &trans
+   &bt  BT_CLR    &to _BASE     &trans        &trans        &trans         &trans   &trans   &trans &trans    &trans
+                          	    &trans       &trans      &trans  &trans
                         >;
                 };
 
