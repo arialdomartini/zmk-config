@@ -84,10 +84,7 @@
                 = <&macro_tap &kp MINUS &kp GT>
                 ;
         };
-    };
-};
-/ {
-    macros {
+        
         fat_arrow: fat_arrow {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
