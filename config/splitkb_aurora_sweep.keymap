@@ -89,10 +89,39 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp B &kp T>
+                = <&macro_tap &kp B  &kp T  &kp SPC>
                 , <&to _BLUETOOTH>
                 ;
         };
+
+        blue_0: blue_0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp B  &kp T  &kp MINUS  &kp N0  &kp SPC>
+                , <&bt BT_SEL 0>
+                ;
+        };
+
+        blue_1: blue_1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp B  &kp T  &kp MINUS  &kp N1  &kp SPC>
+                , <&bt BT_SEL 1>
+                ;
+        };
+
+
+        blue_clr: blue_clr {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp B  &kp T  &kp MINUS  &kp C &kp L &kp R  &kp SPC>
+                , <&bt BT_CLR >
+                ;
+        };
+
 
     };
 };
@@ -172,8 +201,8 @@
 //                    |     |     |     |   |     |      |      |
                         bindings = <
    &out OUT_TOG   &trans        &trans        &trans        &trans         &trans   &trans   &trans &trans    &trans
-   &bt  BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4   &trans   &trans   &trans &trans    &trans
-   &bt  BT_CLR    &to _BASE     &trans        &trans        &trans         &trans   &trans   &trans &trans    &trans
+   &blue_0        &blue_1       &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4   &trans   &trans   &trans &trans    &trans
+   &blue_clr      &to _BASE     &trans        &trans        &trans         &trans   &trans   &trans &trans    &trans
                           	    &trans       &trans      &trans  &trans
                         >;
                 };
