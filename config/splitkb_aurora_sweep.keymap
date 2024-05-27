@@ -92,6 +92,13 @@
             bindings = <&macro_tap &kp LT &kp PIPE>;
         };
 
+        bind: bind {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp GT &kp GT &kp EQUAL>;
+        };
+
+
 
         cotab: cotab {
             compatible = "zmk,behavior-macro";
@@ -177,12 +184,12 @@
                 cursors_layer {
                         label = "Arialdo";
 // -------------------------------------------------------------------
-// |BLUTH|     |     |     |     |   | =>  | Home |   ^  | End | `   |
+// |BLUTH|     |     |     |     |   |     | Home |   ^  | End | `   |
 // |     |<--  |     |     |     |   | Ins | <--  | Down | --> |  '  |
 // |     |     |     |     |     |   |     | PgUp | CAPS | PgDn|  \  |
 //           |     |     |     |       |      | Tab   |      |
                         bindings = <
-      &go_blue   &trans       &trans       &trans       &trans         &fat_arrow  &kp HOME   &kp UP    &kp END    &kp GRAVE
+      &go_blue   &trans       &trans       &trans       &trans         &trans          &kp HOME   &kp UP    &kp END    &kp GRAVE
       &trans     &kp LEFT     &trans       &trans       &trans         &kp INS         &kp LEFT   &kp DOWN  &kp RIGHT  &kp SINGLE_QUOTE
       &trans     &trans       &trans       &trans       &trans         &trans          &kp PG_UP  &kp CAPS  &kp PG_DN  &kp BACKSLASH
                           	                &trans  &trans       &kp RET  &kp TAB
@@ -250,14 +257,14 @@
                         label = "Arialdo";
 
 // -------------------------------------------------------------------
-// |     |     |     |     | <-  |   |  -> |  _   |  *   |  ~  |  |  |
-// |  <  |  {  |  [  |  (  |     |   |     |  )   |  ]   |   } |  >  |
-// |     |     |  <| |  <- |     |   |  -> | =>   |  |>  |     |  \  |
-//                    |     |     |     |   |     |      |      |
+// |     |     |     |     |     |   |     |  _   |  *   |  ~  |  |  |
+// |  <  |  {  |  [  |  (  |     |   |     |  )   |  ]   |  }  |  >  |
+// |     |     |     |  <- | <|  |   | |>  |  ->  |  =>  | >>= |  \  |
+//                  |     |     |     |   |     |      |      |
                         bindings = <
-      &trans       &trans           &trans       &trans       &back_arrow    &arrow      &kp UNDER  &kp STAR    &kp TILDE  &kp PIPE
-      &kp LT       &kp LBRC         &kp LBKT     &kp LPAR     &trans         &trans      &kp RPAR   &kp RBKT  &kp RBRC   &kp GT
-      &trans       &fsharp_backpipe &trans       &back_arrow  &trans         &trans      &arrow     &fat_arrow    &fsharp_pipe &kp BSLH
+      &trans       &trans      &trans       &trans       &trans            &trans       &kp UNDER  &kp STAR    &kp TILDE  &kp PIPE
+      &kp LT       &kp LBRC    &kp LBKT     &kp LPAR     &trans            &trans       &kp RPAR   &kp RBKT  &kp RBRC     &kp GT
+      &trans       &trans      &trans       &back_arrow  &fsharp_backpipe  &fsharp_pipe &arrow     &fat_arrow    &bind    &kp BSLH
                           	        &trans     &trans       &trans      &trans  &trans      &trans
                         >;
                 };
