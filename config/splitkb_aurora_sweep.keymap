@@ -67,13 +67,18 @@
             #binding-cells = <0>;
             bindings = <&macro_tap &kp MINUS &kp GT>;
         };
-        
+
         fat_arrow: fat_arrow {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_tap &kp EQUAL &kp GT>;
         };
 
+        back_arrow: back_arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LT &kp MINUS>;
+        };
 
         cotab: cotab {
             compatible = "zmk,behavior-macro";
@@ -232,12 +237,12 @@
                         label = "Arialdo";
 
 // -------------------------------------------------------------------
-// |     |     |     |     |     |   |  -> |  _   |  *   |  ~  |  |  |
+// |     |     |     |     | <-  |   |  -> |  _   |  *   |  ~  |  |  |
 // |  <  |  {  |  [  |  (  |     |   |     |  )   |  ]   |   } |  >  |
 // |     |     |     |     |     |   |     |      |      |     |  \  |
 //                    |     |     |     |   |     |      |      |
                         bindings = <
-      &trans       &trans       &trans       &trans       &trans         &arrow      &kp UNDER  &kp STAR    &kp TILDE  &kp PIPE
+      &trans       &trans       &trans       &trans       &back_arrow    &arrow      &kp UNDER  &kp STAR    &kp TILDE  &kp PIPE
       &kp LT       &kp LBRC     &kp LBKT     &kp LPAR     &trans         &trans      &kp RPAR   &kp RBKT  &kp RBRC   &kp GT
       &trans       &trans       &trans       &trans       &trans         &trans      &trans     &trans    &trans     &kp BSLH
                           	        &trans     &trans       &trans      &trans  &trans      &trans
