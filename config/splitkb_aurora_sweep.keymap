@@ -98,6 +98,12 @@
             bindings = <&macro_tap &kp GT &kp GT &kp EQUAL>;
         };
 
+        reverse_bind: reverse_bind {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp EQUAL &kp LT &kp LT >;
+        };
+
 
 
         cotab: cotab {
@@ -259,12 +265,12 @@
 // -------------------------------------------------------------------
 // |     |     |     |     |     |   |     |  _   |  *   |  ~  |  |  |
 // |  <  |  {  |  [  |  (  |     |   |     |  )   |  ]   |  }  |  >  |
-// |     |     |     |  <- | <|  |   | |>  |  ->  |  =>  | >>= |  \  |
+// |     | =<< |     |  <- | <|  |   | |>  |  ->  |  =>  | >>= |  \  |
 //                  |     |     |     |   |     |      |      |
                         bindings = <
-      &trans       &trans      &trans       &trans       &trans            &trans       &kp UNDER  &kp STAR    &kp TILDE  &kp PIPE
-      &kp LT       &kp LBRC    &kp LBKT     &kp LPAR     &trans            &trans       &kp RPAR   &kp RBKT  &kp RBRC     &kp GT
-      &trans       &trans      &trans       &back_arrow  &fsharp_backpipe  &fsharp_pipe &arrow     &fat_arrow    &bind    &kp BSLH
+      &trans       &trans         &trans       &trans       &trans            &trans       &kp UNDER  &kp STAR    &kp TILDE  &kp PIPE
+      &kp LT       &kp LBRC       &kp LBKT     &kp LPAR     &trans            &trans       &kp RPAR   &kp RBKT  &kp RBRC     &kp GT
+      &trans       &reverse_bind  &trans       &back_arrow  &fsharp_backpipe  &fsharp_pipe &arrow     &fat_arrow    &bind    &kp BSLH
                           	        &trans     &trans       &trans      &trans  &trans      &trans
                         >;
                 };
