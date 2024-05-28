@@ -72,7 +72,7 @@
         combo_G {
             timeout-ms = <50>;
             key-positions = <12 13>;
-            bindings = <&kp G>;
+            bindings = <&mt LC(LSHIFT) G>;
         };
 
 
@@ -296,7 +296,7 @@
       &trans       &trans         &trans       &trans       &trans            &trans       &kp UNDER  &kp STAR    &kp TILDE  &kp PIPE
       &kp LT       &kp LBRC       &kp LBKT     &kp LPAR     &trans            &trans       &kp RPAR   &kp RBKT  &kp RBRC     &kp GT
       &trans       &reverse_bind  &trans       &back_arrow  &fsharp_backpipe  &fsharp_pipe &arrow     &fat_arrow    &bind    &kp BSLH
-                          	        &trans     &trans       &trans      &trans  &trans      &trans
+                          	                 &trans       &trans      &trans  &trans
                         >;
                 };
 
@@ -314,7 +314,7 @@
    &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans
    &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans
    &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans
-                          	               &trans       &trans      &trans  &trans
+                          	          &trans       &trans      &trans  &trans
                         >;
                 };
         };
