@@ -1,0 +1,321 @@
+/*
+*
+* Copyright (c) 2021 Darryl deHaan
+* SPDX-License-Identifier: MIT
+*
+*/
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+
+#define _BASE       0  // base keyboard
+#define _CURS       1  // cursors
+#define _NUM        2  // numbers and operations
+#define _BLUETOOTH  3  // layer to manage blue tooth connection
+#define _FUNL       4  // Function keys
+#define _SYMB       5  // Parenthesis
+
+
+
+// Left hand
+#define MY_A       &mt LGUI A
+
+#define MY_S       &mt LALT S
+#define MY_2       &mt LALT N2
+#define MY_F2      &mt LALT F2
+
+
+#define MY_D       &mt LCTRL D
+#define MY_3       &mt LCTRL N3
+#define MY_F3      &mt LCTRL F3
+
+#define MY_F       &mt LSHIFT F
+#define MY_4       &mt LSHIFT N4
+#define MY_F4      &mt LSHIFT F4
+
+// Right hand
+#define MY_J       &mt RSHIFT J
+#define MY_7       &mt RSHIFT N7
+#define MY_F7      &mt RSHIFT F7
+
+#define MY_K       &mt RCTRL K
+#define MY_8       &mt RCTRL N8
+#define MY_F8      &mt RCTRL F8
+
+#define MY_L       &mt RALT L
+#define MY_9       &mt RALT N9
+#define MY_F9      &mt RALT F9
+
+#define MY_SEMI    &mt RGUI SEMI
+
+
+
+#define MY_SPC     &lt _NUM SPC
+#define MY_SPACE   &lt _NUM SPACE
+#define MY_RET     &lt _CURS RET
+
+
+#define MY_DEL     &lt _FUNL DEL
+#define MY_BSPC    &lt _SYMB BSPC
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_T {
+            timeout-ms = <50>;
+            key-positions = <2 3>;
+            bindings = <&kp T>;
+        };
+
+        combo_G {
+            timeout-ms = <50>;
+            key-positions = <12 13>;
+            bindings = <&mt LC(LSHIFT) G>;
+        };
+
+
+        combo_B {
+            timeout-ms = <50>;
+            key-positions = <22 23>;
+            bindings = <&kp B>;
+        };
+    };
+};
+
+
+/ {
+    macros {
+        arrow: arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp MINUS &kp GT>;
+        };
+
+        fat_arrow: fat_arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp EQUAL &kp GT>;
+        };
+
+        back_arrow: back_arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LT &kp MINUS>;
+        };
+
+        fsharp_pipe: fsharp_pipe {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp PIPE &kp GT>;
+        };
+
+        fsharp_backpipe: fsharp_backpipe {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LT &kp PIPE>;
+        };
+
+        bind: bind {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp GT &kp GT &kp EQUAL>;
+        };
+
+        reverse_bind: reverse_bind {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp EQUAL &kp LT &kp LT >;
+        };
+
+
+
+        cotab: cotab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap &kp TAB>
+                , <&macro_release &kp LSHFT>
+                ;
+        };
+
+        go_blue: go_blue {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp B  &kp T  &kp SPC>
+                , <&to _BLUETOOTH>
+                ;
+        };
+
+        blue_0: blue_0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp B  &kp T  &kp MINUS  &kp N0  &kp SPC>
+                , <&bt BT_SEL 0>
+                ;
+        };
+
+        blue_1: blue_1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp B  &kp T  &kp MINUS  &kp N1  &kp SPC>
+                , <&bt BT_SEL 1>
+                ;
+        };
+
+
+        blue_clr: blue_clr {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp B  &kp T  &kp MINUS  &kp C &kp L &kp R  &kp SPC>
+                , <&bt BT_CLR >
+                ;
+        };
+
+
+    };
+};
+
+
+&mt {
+    flavor = "tap-preferred";
+    tapping-term-ms = <150>;
+    quick-tap-ms = <120>;
+    global-quick-tap;
+};
+
+/ {
+        keymap {
+                compatible = "zmk,keymap";
+
+                // _BASE 0
+                default_layer {
+                        label = "Arialdo";
+// ------------------------------------------------------`   '----------------------------------------
+// |  Q       |  W     |  E      |  R       |  T  |   |  Y  |  U        |  I       |  O      |  P    |
+// |  A/GUI   |  S/ALT |  D/CTRL |  F/SHIFT |  G  |   |  H  |  J/SHIFT  |  K/CTRL  |  L/ALT  | ;/GUI |
+// |  Z       |  X     |  C      |  V       |  B  |   |  N  |  M        |          |  .      |  /    |
+//                          | BSPC/SYMB | RET/CUR |  | SPACE/NUM | DEL/FUNL  |     |
+
+                        bindings = <
+   &kp Q  &kp W  &kp E        &kp R  &kp T         &kp Y  &kp U    &kp I          &kp O    &kp P
+   MY_A   MY_S   MY_D         MY_F   &kp G         &kp H  MY_J     MY_K            MY_L     MY_SEMI
+   &kp Z  &kp X  &kp C        &kp V  &kp B         &kp N  &kp M    &kp COMMA       &kp DOT  &kp FSLH
+                             MY_BSPC    MY_RET    MY_SPACE   MY_DEL
+                        >;
+                };
+
+                // _CURS 1
+                cursors_layer {
+                        label = "Arialdo";
+// -------------------------------------------------------------------
+// |BLUTH|       |     |     |     |   |     | Home |   ^  | End | `   |
+// |     |<-/ALT |     |     |     |   | Ins | <--  | Down | --> |  '  |
+// |     |       |     |     |     |   |     | PgUp | CAPS | PgDn|  \  |
+//           |     |     |     |       |      | Tab   |      |
+                        bindings = <
+      &go_blue   &trans            &trans       &trans       &trans         &trans          &kp HOME   &kp UP    &kp END    &kp GRAVE
+      &trans     &mt LALT LEFT   &trans       &trans       &trans         &kp INS         &kp LEFT   &kp DOWN  &kp RIGHT  &kp SINGLE_QUOTE
+      &trans     &trans            &trans       &trans       &trans         &trans          &kp PG_UP  &kp CAPS  &kp PG_DN  &kp BACKSLASH
+                          	                &trans  &trans       &kp RET  &kp TAB
+                        >;
+                };
+
+
+                // _NUM = 2
+                numbers_layer {
+                        label = "Arialdo";
+
+// -------------------------------------------------------------------
+// |  !  |  @  |  #  |  $  |  %  |   |     |  -   |  =   |  +  |  *  |
+// |  1  |  2  |  3  |  4  |  5  |   |  6  |  7   |  8   |  9  |  0  |
+// |  ^  |  &  |     |     |     |   |     |      |      |     |     |
+//             |     |     |     |   |     |      |      |
+                        bindings = <
+      &kp EXCL     &kp AT       &kp HASH     &kp DLLR     &kp PERCENT    &trans   &kp MINUS   &kp EQUAL   &kp PLUS  &kp STAR
+      &kp N1       MY_2         MY_3         MY_4         &kp N5         &kp N6   MY_7        MY_8        MY_9    &kp N0
+      &kp CARET    &kp AMPS     &trans       &trans       &trans         &trans   &trans      &trans      &trans    &trans
+                          	                     &trans        &trans             &trans    &trans
+                        >;
+                };
+
+
+                // _BLUETOOTH = 3
+                bluetooth_layer {
+                        label = "Bluetooth";
+
+// -------------------------------------------------------------------
+// | TGL |     |     |     |     |   |     |      |      |     |     |
+// | BT0 | BT1 | BT2 | BT3 | BT4 |   |     |      |      |     |     |
+// | CLR |     |     |     |     |   |     |      |      |     |     |
+//                    |     |     |     |   |     |      |      |
+                        bindings = <
+   &out OUT_TOG   &trans        &trans        &trans        &trans         &trans   &trans   &trans &trans    &trans
+   &blue_0        &blue_1       &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4   &trans   &trans   &trans &trans    &trans
+   &blue_clr      &to _BASE     &trans        &trans        &trans         &trans   &trans   &trans &trans    &trans
+                          	    &trans       &trans      &trans  &trans
+                        >;
+                };
+
+
+                // _FUNCTION = 4
+                function_layer {
+                        label = "Arialdo";
+
+// -------------------------------------------------------------------
+// | F11 | F12 | F14 | F15 | F16 |   | F17 | F18  |  F19 | F20 | F20 |
+// | F1  | F2  | F3  | F4  | F5  |   | F6  | F7   |  F8  | F9  | F0  |
+// |     |     |     |     |     |   |     |      |      |     |     |
+//                    |     | Esc |     |   |     |      |      |
+                        bindings = <
+      &kp F11      &kp F12      &kp F13      &kp F14      &kp F15        &kp F16  &kp F17  &kp F18  &kp F19  &kp F20
+      &kp F1       MY_F2        MY_F3        MY_F4        &kp F5         &kp F6   MY_F7    MY_F8    MY_F9    &kp F10
+      &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans   &trans   &trans
+                          	            &kp ESC     &cotab      &trans  &trans
+                        >;
+                };
+
+
+
+                // _SYMB = 5
+                symbols_layer {
+                        label = "Arialdo";
+
+// -------------------------------------------------------------------
+// |     |     |     |     |     |   |     |  _   |  *   |  ~  |  |  |
+// |  <  |  {  |  [  |  (  |     |   |     |  )   |  ]   |  }  |  >  |
+// |     | =<< |     |  <- | <|  |   | |>  |  ->  |  =>  | >>= |  \  |
+//                  |     |     |     |   |     |      |      |
+                        bindings = <
+      &trans       &trans         &trans       &trans       &trans            &trans       &kp UNDER  &kp STAR    &kp TILDE  &kp PIPE
+      &kp LT       &kp LBRC       &kp LBKT     &kp LPAR     &trans            &trans       &kp RPAR   &kp RBKT  &kp RBRC     &kp GT
+      &trans       &reverse_bind  &trans       &back_arrow  &fsharp_backpipe  &fsharp_pipe &arrow     &fat_arrow    &bind    &kp BSLH
+                          	                 &trans       &trans      &trans  &trans
+                        >;
+                };
+
+
+                // EMPTY = 6
+                empty_layer {
+                        label = "EMPTY";
+
+// -------------------------------------------------------------------
+// |     |     |     |     |     |   |     |      |      |     |     |
+// |     |     |     |     |     |   |     |      |      |     |     |
+// |     |     |     |     |     |   |     |      |      |     |     |
+//                    |     |     |     |   |     |      |      |
+                        bindings = <
+   &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans
+   &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans
+   &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans
+                          	          &trans       &trans      &trans  &trans
+                        >;
+                };
+        };
+};
