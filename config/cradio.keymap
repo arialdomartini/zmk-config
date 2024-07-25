@@ -225,20 +225,20 @@
                 cursors_layer {
                         label = "Arialdo";
 //  ---------------------------------------`   '----------------------------------------
-// | BLUE  |       |       |       |       |   |        | Home  |  ^    |  End  |  `    |
+// |       |       |       |       |       |   |        | Home  |  ^    |  End  |  `    |
 //  ---------------------------------------`   '----------------------------------------
 // |       | <-/ALT|       |       |       |   |  Ins   | <--   | Down  |  -->  |  '    |
 //  ---------------------------------------`   '----------------------------------------
-// |       |       |       |       |       |   |        | PgUp  | CAPS  | PgDown|  \    |
+// | Blue  |       |       |       |       |   |        | PgUp  | CAPS  | PgDown|  \    |
 //  ---------------------------------------`   '----------------------------------------
 //                    ---------------------     -----------------------
 //                   |           |         |   |           |   Tab     |
 //                    ---------------------     -----------------------
                         bindings = <
                         
-   &go_blue  &trans         &trans   &trans      &trans  &trans  &kp HOME   &kp UP    &kp END    &kp GRAVE
+   &trans    &trans         &trans   &trans      &trans  &trans  &kp HOME   &kp UP    &kp END    &kp GRAVE
    &trans    &mt LALT LEFT  &trans   &trans      &trans  &kp INS &kp LEFT   &kp DOWN  &kp RIGHT  &kp SINGLE_QUOTE
-   &trans    &trans         &trans   &trans      &trans  &trans  &kp PG_UP  &kp CAPS  &kp PG_DN  &kp BACKSLASH
+   &go_blue  &trans         &trans   &trans      &trans  &trans  &kp PG_UP  &kp CAPS  &kp PG_DN  &kp BACKSLASH
       
                              &trans  &trans      &kp RET  &kp TAB
                                                 
