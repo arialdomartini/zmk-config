@@ -227,7 +227,7 @@
 //  ---------------------------------------`   '----------------------------------------
 // |  `    |       |       |       |       |   |        | Home  |  ^    |  End  |  '    |
 //  ---------------------------------------`   '----------------------------------------
-// |       | <-/ALT|       |       |       |   |  Ins   | <--   | Down  |  -->  |       |
+// |       | <-/ALT|       |       |       |   |  Ins   | <--   | Down  |  -->  |  Caps |
 //  ---------------------------------------`   '----------------------------------------
 // | Blue  |       |       |       |       |   |        | PgUp  | CAPS  | PgDown|  \    |
 //  ---------------------------------------`   '----------------------------------------
@@ -237,8 +237,8 @@
                         bindings = <
                         
    &kp GRAVE &trans         &trans   &trans      &trans  &trans  &kp HOME   &kp UP    &kp END    &kp SINGLE_QUOTE
-   &trans    &mt LALT LEFT  &trans   &trans      &trans  &kp INS &kp LEFT   &kp DOWN  &kp RIGHT  &trans
-   &go_blue  &trans         &trans   &trans      &trans  &trans  &kp PG_UP  &kp CAPS  &kp PG_DN  &kp BACKSLASH
+   &trans    &mt LALT LEFT  &trans   &trans      &trans  &kp INS &kp LEFT   &kp DOWN  &kp RIGHT  &kp CAPS
+   &go_blue  &trans         &trans   &trans      &trans  &trans  &kp PG_UP  &trans  &kp PG_DN  &kp BACKSLASH
       
                              &trans  &trans      &kp RET  &kp TAB
                                                 
