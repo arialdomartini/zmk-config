@@ -197,33 +197,51 @@
                 // _BASE 0
                 default_layer {
                         label = "Arialdo";
-// ------------------------------------------------------`   '----------------------------------------
-// |  Q       |  W     |  E      |  R       |  T  |   |  Y  |  U        |  I       |  O      |  P    |
-// |  A/GUI   |  S/ALT |  D/CTRL |  F/SHIFT |  G  |   |  H  |  J/SHIFT  |  K/CTRL  |  L/ALT  | ;/GUI |
-// |  Z       |  X     |  C      |  V       |  B  |   |  N  |  M        |          |  .      |  /    |
-//                          | BSPC/SYMB | RET/CUR |  | SPACE/NUM | DEL/FUNL  |     |
+
+
+//  ---------------------------------------`   '----------------------------------------
+// |   Q   |   W   |   E   |   R   |   T   |   |   Y    |   U   |   I   |   O   |   P   |
+//  ---------------------------------------`   '----------------------------------------
+// | A/GUI | S/ALT | D/CTL | F/SFT |   G   |   |   H    | J/SFT | K/CTL | L/ALT | ;/GUI |
+//  ---------------------------------------`   '----------------------------------------
+// |   Z   |   X   |   C   |   V   |   B   |   |   N    |   M   |   ,   |   .   |   /   |
+//  ---------------------------------------`   '----------------------------------------
+//                    ---------------------     -----------------------
+//                   | BSPC/SYMB | RET/CUR |   |  SPC/NUM  |  DEL/FUNL |
+//                    ---------------------     -----------------------
 
                         bindings = <
-   &kp Q  &kp W  &kp E        &kp R  &kp T         &kp Y  &kp U    &kp I          &kp O    &kp P
-   MY_A   MY_S   MY_D         MY_F   &kp G         &kp H  MY_J     MY_K            MY_L     MY_SEMI
-   &kp Z  &kp X  &kp C        &kp V  &kp B         &kp N  &kp M    &kp COMMA       &kp DOT  &kp FSLH
-                             MY_BSPC    MY_RET    MY_SPACE   MY_DEL
+                        
+    &kp Q   &kp W   &kp E   &kp R   &kp T         &kp Y  &kp U    &kp I      &kp O    &kp P
+    MY_A    MY_S    MY_D    MY_F    &kp G         &kp H  MY_J     MY_K        MY_L     MY_SEMI
+    &kp Z   &kp X   &kp C   &kp V   &kp B         &kp N  &kp M    &kp COMMA   &kp DOT  &kp FSLH
+    
+                       MY_BSPC     MY_RET         MY_SPACE   MY_DEL
+                       
                         >;
                 };
 
                 // _CURS 1
                 cursors_layer {
                         label = "Arialdo";
-// -------------------------------------------------------------------
-// |BLUTH|       |     |     |     |   |     | Home |   ^  | End | `   |
-// |     |<-/ALT |     |     |     |   | Ins | <--  | Down | --> |  '  |
-// |     |       |     |     |     |   |     | PgUp | CAPS | PgDn|  \  |
-//           |     |     |     |       |      | Tab   |      |
+//  ---------------------------------------`   '----------------------------------------
+// | BLUE  |       |       |       |       |   |        | Home  |  ^    |  End  |  `    |
+//  ---------------------------------------`   '----------------------------------------
+// |       | <-/ALT|       |       |       |   |  Ins   | <--   | Down  |  -->  |  '    |
+//  ---------------------------------------`   '----------------------------------------
+// |       |       |       |       |       |   |        | PgUp  | CAPS  | PgDown|  \    |
+//  ---------------------------------------`   '----------------------------------------
+//                    ---------------------     -----------------------
+//                   |           |         |   |           |   Tab     |
+//                    ---------------------     -----------------------
                         bindings = <
-      &go_blue   &trans            &trans       &trans       &trans         &trans          &kp HOME   &kp UP    &kp END    &kp GRAVE
-      &trans     &mt LALT LEFT   &trans       &trans       &trans         &kp INS         &kp LEFT   &kp DOWN  &kp RIGHT  &kp SINGLE_QUOTE
-      &trans     &trans            &trans       &trans       &trans         &trans          &kp PG_UP  &kp CAPS  &kp PG_DN  &kp BACKSLASH
-                          	                &trans  &trans       &kp RET  &kp TAB
+                        
+   &go_blue  &trans         &trans   &trans      &trans  &trans  &kp HOME   &kp UP    &kp END    &kp GRAVE
+   &trans    &mt LALT LEFT  &trans   &trans      &trans  &kp INS &kp LEFT   &kp DOWN  &kp RIGHT  &kp SINGLE_QUOTE
+   &trans    &trans         &trans   &trans      &trans  &trans  &kp PG_UP  &kp CAPS  &kp PG_DN  &kp BACKSLASH
+      
+                             &trans  &trans      &kp RET  &kp TAB
+                                                
                         >;
                 };
 
@@ -232,16 +250,24 @@
                 numbers_layer {
                         label = "Arialdo";
 
-// -------------------------------------------------------------------
-// |  !  |  @  |  #  |  $  |  %  |   |     |  -   |  =   |  +  |  *  |
-// |  1  |  2  |  3  |  4  |  5  |   |  6  |  7   |  8   |  9  |  0  |
-// |  ^  |  &  |     |     |     |   |     |      |      |     |     |
-//             |     |     |     |   |     |      |      |
+//  ---------------------------------------`   '----------------------------------------
+// |   !   |   @   |   #   |   $   |  %    |   |        |   -   |   =   |   +   |   *   |
+//  ---------------------------------------`   '----------------------------------------
+// |   1   |   2   |   3   |   4   |  5    |   |   6    |   7   |   8   |   9   |   0   |
+//  ---------------------------------------`   '----------------------------------------
+// |   ^   |   &   |       |       |       |   |        |       |       |       |       |
+//  ---------------------------------------`   '----------------------------------------
+//                    ---------------------     -----------------------
+//                   |           |         |   |           |           |
+//                    ---------------------     -----------------------
+
                         bindings = <
-      &kp EXCL     &kp AT       &kp HASH     &kp DLLR     &kp PERCENT    &trans   &kp MINUS   &kp EQUAL   &kp PLUS  &kp STAR
-      &kp N1       MY_2         MY_3         MY_4         &kp N5         &kp N6   MY_7        MY_8        MY_9    &kp N0
-      &kp CARET    &kp AMPS     &trans       &trans       &trans         &trans   &trans      &trans      &trans    &trans
-                          	                     &trans        &trans             &trans    &trans
+                        
+    &kp EXCL     &kp AT       &kp HASH     &kp DLLR     &kp PERCENT    &trans   &kp MINUS   &kp EQUAL   &kp PLUS  &kp STAR
+    &kp N1       MY_2         MY_3         MY_4         &kp N5         &kp N6   MY_7        MY_8        MY_9    &kp N0
+    &kp CARET    &kp AMPS     &trans       &trans       &trans         &trans   &trans      &trans      &trans    &trans
+    
+                              &trans       &trans       &trans         &trans
                         >;
                 };
 
@@ -249,17 +275,25 @@
                 // _BLUETOOTH = 3
                 bluetooth_layer {
                         label = "Bluetooth";
+//  ---------------------------------------`   '----------------------------------------
+// |  TGL  |       |       |       |       |   |        |       |       |       |       |
+//  ---------------------------------------`   '----------------------------------------
+// |  BT0  |  BT1  |  BT2  |  BT3  |  BT4  |   |        |       |       |       |       |
+//  ---------------------------------------`   '----------------------------------------
+// |  CLR  |       |       |       |       |   |        |       |       |       |       |
+//  ---------------------------------------`   '----------------------------------------
+//                    ---------------------     -----------------------
+//                   |           |         |   |           |           |
+//                    ---------------------     -----------------------
 
-// -------------------------------------------------------------------
-// | TGL |     |     |     |     |   |     |      |      |     |     |
-// | BT0 | BT1 | BT2 | BT3 | BT4 |   |     |      |      |     |     |
-// | CLR |     |     |     |     |   |     |      |      |     |     |
-//                    |     |     |     |   |     |      |      |
+
                         bindings = <
-   &out OUT_TOG   &trans        &trans        &trans        &trans         &trans   &trans   &trans &trans    &trans
-   &blue_0        &blue_1       &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4   &trans   &trans   &trans &trans    &trans
-   &blue_clr      &to _BASE     &trans        &trans        &trans         &trans   &trans   &trans &trans    &trans
-                          	    &trans       &trans      &trans  &trans
+                        
+   &out OUT_TOG   &trans        &trans        &trans        &trans           &trans   &trans   &trans  &trans    &trans
+   &blue_0        &blue_1       &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4     &trans   &trans   &trans  &trans    &trans
+   &blue_clr      &to _BASE     &trans        &trans        &trans           &trans   &trans   &trans  &trans    &trans
+   
+                          	               &trans       &trans           &trans  &trans
                         >;
                 };
 
@@ -268,16 +302,24 @@
                 function_layer {
                         label = "Arialdo";
 
-// -------------------------------------------------------------------
-// | F11 | F12 | F14 | F15 | F16 |   | F17 | F18  |  F19 | F20 | F20 |
-// | F1  | F2  | F3  | F4  | F5  |   | F6  | F7   |  F8  | F9  | F0  |
-// |     |     |     |     |     |   |     |      |      |     |     |
-//                    |     | Esc |     |   |     |      |      |
+//  ---------------------------------------`   '----------------------------------------
+// |  F11  |  F12  |  F13  |  F14  |  F15  |   |  F16   |  F17  |  F18  |  F19  |  F20  |
+//  ---------------------------------------`   '----------------------------------------
+// |  F1   |  F2   |  F3   |  F4   |  F5   |   |  F6    |  F7   |  F8   |  F9   |  F10  |
+//  ---------------------------------------`   '----------------------------------------
+// |       |       |       |       |       |   |        |       |       |       |       |
+//  ---------------------------------------`   '----------------------------------------
+//                    ---------------------     -----------------------
+//                   |           |   ESC   |   |           |           |
+//                    ---------------------     -----------------------
+
                         bindings = <
-      &kp F11      &kp F12      &kp F13      &kp F14      &kp F15        &kp F16  &kp F17  &kp F18  &kp F19  &kp F20
-      &kp F1       MY_F2        MY_F3        MY_F4        &kp F5         &kp F6   MY_F7    MY_F8    MY_F9    &kp F10
-      &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans   &trans   &trans
-                          	            &kp ESC     &cotab      &trans  &trans
+                        
+   &kp F11  &kp F12  &kp F13   &kp F14   &kp F15        &kp F16  &kp F17  &kp F18  &kp F19  &kp F20
+   &kp F1   MY_F2    MY_F3     MY_F4     &kp F5         &kp F6   MY_F7    MY_F8    MY_F9    &kp F10
+   &trans   &trans   &trans    &trans    &trans         &trans   &trans   &trans   &trans   &trans
+      
+                              &kp ESC    &cotab         &trans  &trans
                         >;
                 };
 
@@ -287,16 +329,24 @@
                 symbols_layer {
                         label = "Arialdo";
 
-// -------------------------------------------------------------------
-// |     |     |     |     |     |   |     |  _   |  *   |  ~  |  |  |
-// |  <  |  {  |  [  |  (  |     |   |     |  )   |  ]   |  }  |  >  |
-// |     | =<< |     |  <- | <|  |   | |>  |  ->  |  =>  | >>= |  \  |
-//                  |     |     |     |   |     |      |      |
+//  ---------------------------------------`   '----------------------------------------
+// |       |       |       |       |       |   |        |   _   |   *   |   ~   |   |   |
+//  ---------------------------------------`   '----------------------------------------
+// |   <   |   {   |   [   |   (   |       |   |        |   )   |   ]   |   }   |   >   |
+//  ---------------------------------------`   '----------------------------------------
+// |       |  =<<  |       |   <-  |   <|  |   |   |>   |  ->   |  =>   |  >>=  |       |
+//  ---------------------------------------`   '----------------------------------------
+//                    ---------------------     -----------------------
+//                   |           |         |   |           |           |
+//                    ---------------------     -----------------------
+
                         bindings = <
-      &trans       &trans         &trans       &trans       &trans            &trans       &kp UNDER  &kp STAR    &kp TILDE  &kp PIPE
-      &kp LT       &kp LBRC       &kp LBKT     &kp LPAR     &trans            &trans       &kp RPAR   &kp RBKT  &kp RBRC     &kp GT
-      &trans       &reverse_bind  &trans       &back_arrow  &fsharp_backpipe  &fsharp_pipe &arrow     &fat_arrow    &bind    &kp BSLH
-                          	                 &trans       &trans      &trans  &trans
+                        
+   &trans    &trans         &trans     &trans       &trans              &trans        &kp UNDER  &kp STAR    &kp TILDE  &kp PIPE
+   &kp LT    &kp LBRC       &kp LBKT   &kp LPAR     &trans              &trans        &kp RPAR   &kp RBKT  &kp RBRC     &kp GT
+   &trans    &reverse_bind  &trans     &back_arrow  &fsharp_backpipe    &fsharp_pipe  &arrow     &fat_arrow    &bind    &kp BSLH
+      
+                          	       &trans       &trans              &trans        &trans
                         >;
                 };
 
@@ -305,11 +355,17 @@
                 empty_layer {
                         label = "EMPTY";
 
-// -------------------------------------------------------------------
-// |     |     |     |     |     |   |     |      |      |     |     |
-// |     |     |     |     |     |   |     |      |      |     |     |
-// |     |     |     |     |     |   |     |      |      |     |     |
-//                    |     |     |     |   |     |      |      |
+//  ---------------------------------------`   '----------------------------------------
+// |       |       |       |       |       |   |        |       |       |       |       |
+//  ---------------------------------------`   '----------------------------------------
+// |       |       |       |       |       |   |        |       |       |       |       |
+//  ---------------------------------------`   '----------------------------------------
+// |       |       |       |       |       |   |        |       |       |       |       |
+//  ---------------------------------------`   '----------------------------------------
+//                    ---------------------     -----------------------
+//                   |           |         |   |           |           |
+//                    ---------------------     -----------------------
+
                         bindings = <
    &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans
    &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans
