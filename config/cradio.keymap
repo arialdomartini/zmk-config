@@ -232,7 +232,7 @@
 // | Blue  |       |       |       |       |   |        | PgUp  | CAPS  | PgDown|  \    |
 //  ---------------------------------------`   '----------------------------------------
 //                    ---------------------     -----------------------
-//                   |           |         |   |           |   Tab     |
+//                   |           |         |   |  Tab     |           |
 //                    ---------------------     -----------------------
                         bindings = <
                         
@@ -240,7 +240,7 @@
    &trans    &mt LALT LEFT  &trans   &trans   &trans     &kp INS  &kp LEFT   &kp DOWN  &kp RIGHT  &kp CAPS
    &go_blue  &trans         &trans   &trans   &trans     &trans   &kp PG_UP  &trans  &kp PG_DN  &kp BACKSLASH
       
-                                     &trans   &trans     &kp RET  &kp TAB
+                                     &trans   &trans     &kp TAB  &trans
                                                 
                         >;
                 };
