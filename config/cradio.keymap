@@ -285,7 +285,7 @@
 //  ---------------------------------------`   '----------------------------------------
 // |  BT0  |  BT1  |  BT2  |  BT3  |  BT4  |   |        |       |       |       |       |
 //  ---------------------------------------`   '----------------------------------------
-// |  CLR  |       |       |       |       |   |        |       |       |       |       |
+// |  CLR  | BASE  |       |       | Boot  |   |        |       |       |       |       |
 //  ---------------------------------------`   '----------------------------------------
 //                    ---------------------     -----------------------
 //                   |           |         |   |           |           |
@@ -296,7 +296,7 @@
                         
    &out OUT_TOG   &trans        &trans        &trans        &trans           &trans   &trans   &trans  &trans    &trans
    &blue_0        &blue_1       &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4     &trans   &trans   &trans  &trans    &trans
-   &blue_clr      &to _BASE     &trans        &trans        &trans           &trans   &trans   &trans  &trans    &trans
+   &blue_clr      &to _BASE     &trans        &trans        &bootloader      &trans   &trans   &trans  &trans    &trans
    
                           	               &trans       &trans           &trans  &trans
                         >;
