@@ -232,7 +232,7 @@
 //  ---------------------------------------`   '----------------------------------------
 // |  `    |       |       |       |       |   |    |   | Home  |  ^    |  End  |  '    |
 //  ---------------------------------------`   '----------------------------------------
-// |       | <-/ALT|  CTL  |  SFT  |       |   |  Ins   | <--   | Down  |  -->  |  CAPS |
+// |       | <-/ALT|  CTL  |  SFT  |       |   |  Ins   | <--   | Down  |  -->  | WCaps |
 //  ---------------------------------------`   '----------------------------------------
 // | Blue  |       |       |       |       |   |        | PgUp  |       | PgDown|  \    |
 //  ---------------------------------------`   '----------------------------------------
@@ -242,8 +242,8 @@
                         bindings = <
                         
    &kp GRAVE &trans         &trans   &trans   &trans     &kp PIPE &kp HOME   &kp UP    &kp END    &kp SINGLE_QUOTE
-   &trans    &mt LALT LEFT  &trans   &trans   &trans     &kp INS  &kp LEFT   &kp DOWN  &kp RIGHT  &kp CAPS
-   &go_blue  &trans         &trans   &trans   &trans     &trans   &kp PG_UP  &trans  &kp PG_DN  &kp BACKSLASH
+   &trans    &mt LALT LEFT  &trans   &trans   &trans     &kp INS  &kp LEFT   &kp DOWN  &kp RIGHT  &caps_word
+   &go_blue  &trans         &trans   &trans   &trans     &trans   &kp PG_UP  &trans  &kp PG_DN    &kp BACKSLASH
       
                                      &trans   &trans     &kp TAB  &trans
                                                 
