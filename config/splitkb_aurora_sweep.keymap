@@ -217,12 +217,12 @@
 // -------------------------------------------------------------------
 // |   ` |       |     |     |     |   |     | Home |   ^  | End |  '   |
 // |     |<-/ALT |     |     |     |   | Ins | <--  | Down | --> | Caps |
-// |BLUTH|       |     |     |     |   |     | PgUp | CAPS | PgDn|  \  |
+// |BLUTH|       |     |     |     |   |     | PgUp | Contx | PgDn|  \  |
 //           |     |     |     |       |  Tab   |      |      |
                         bindings = <
       &kp GRAVE  &trans            &trans       &trans       &trans         &trans          &kp HOME   &kp UP    &kp END    &kp SINGLE_QUOTE
       &trans     &mt LALT LEFT     &trans       &trans       &trans         &kp INS         &kp LEFT   &kp DOWN  &kp RIGHT  &caps_word
-      &go_blue   &trans            &trans       &trans       &trans         &trans          &kp PG_UP  &kp CAPS  &kp PG_DN  &kp BACKSLASH
+      &go_blue   &trans            &trans       &trans       &trans         &trans          &kp PG_UP  &kp K_APP &kp PG_DN  &kp BACKSLASH
                           	                &trans  &trans       &kp TAB   &trans
                         >;
                 };
