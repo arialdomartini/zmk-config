@@ -348,16 +348,28 @@
                 symbols_layer {
                         label = "Arialdo";
 
-// -------------------------------------------------------------------
-// |     |     |     |     |     |   |  -> |  _   |  *   |  ~  |  |  |
-// |  <  |  {  |  [  |  (  |     |   |     |  )   |  ]   |   } |  >  |
-// |     |     |     |     |     |   |     |      |      |     |  \  |
-//                    |     |     |     |   |     |      |      |
-                        bindings = <
-   &trans     &trans       &trans       &trans       &trans       &trans         &arrow      &kp UNDER  &kp STAR    &kp TILDE  &kp PIPE    &trans
-   &trans     &kp LT       &kp LBRC     &kp LBKT     &kp LPAR     &trans         &trans      &kp RPAR   &kp RBKT  &kp RBRC   &kp GT    &trans
-   &trans     &trans       &trans       &trans       &trans       &trans         &trans      &trans     &trans    &trans     &kp BSLH    &trans
-                          	        &trans     &trans       &trans      &trans  &trans      &trans
+
+//  ------------------------------    -----------------------------
+// |     |     |     |     |     |   |  |  |  _  |  *  |  ~  | "   |
+// |     |     |     |     |     |   |     |     |     |     |     |
+//  ------------------------------    -----------------------------
+// |  <  |  {  |  [  |  (  |     |   |     |  )  |  ]  |  }  |  >  |
+// |     |     |     |     |     |   |     |     |     |     |     |
+//  ------------------------------    -----------------------------
+// |     |     |     | <-  | <|  |   |  |> |  -> |  => | >>= | <*> |
+// |     |     |     |     |     |   |     |     |     |     |     |
+//  ------------------------------    -----------------------------
+//
+//      -----     -----    -----       -----    -----    ----- 
+//     |     |   |     |  |     |     |     |  |     |  |     |
+//     |     |   |     |  |     |     |     |  |     |  |     |
+//      -----     -----    -----       -----    -----    ----- 
+
+                          bindings = <
+      &trans  &trans       &trans         &trans       &trans       &trans            &kp PIPE     &kp UNDER  &kp STAR    &kp TILDE  &kp DOUBLE_QUOTES  &trans
+      &trans  &kp LT       &kp LBRC       &kp LBKT     &kp LPAR     &trans            &trans       &kp RPAR   &kp RBKT  &kp RBRC     &kp GT             &trans
+      &trans  &trans       &reverse_bind  &trans       &back_arrow  &fsharp_backpipe  &fsharp_pipe &arrow     &fat_arrow    &bind    &kp BSLH           &trans
+                        	              &trans  &trans       &trans      &trans  &trans   &trans
                         >;
                 };
 
