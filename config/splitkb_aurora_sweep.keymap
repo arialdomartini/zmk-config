@@ -298,7 +298,7 @@
 
                         bindings = <
    &out OUT_TOG   &trans        &trans        &trans        &trans         &trans   &trans   &trans &trans    &trans
-   &blue_0        &blue_1       &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4   &trans   &trans   &trans &trans    &trans
+   &blue_1        &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans          &trans   &trans   &trans &trans    &blue_0
    &blue_clr      &to _BASE     &trans        &trans        &trans         &trans   &trans   &trans &trans    &trans
                           	    &trans       &trans      &trans  &trans
                         >;
