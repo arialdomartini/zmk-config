@@ -17,6 +17,7 @@
   };
 };
 
+
 #define _BASE       0  // base keyboard
 #define _CURS       1  // cursors
 #define _NUM        2  // numbers and operations
@@ -27,21 +28,19 @@
 
 
 // Left hand
+#define MY_A       &mt LGUI A
+
 #define MY_S       &mt LALT S
 #define MY_2       &mt LALT N2
 #define MY_F2      &mt LALT F2
 
-
 #define MY_D       &mt LCTRL D
 #define MY_3       &mt LCTRL N3
-#define MY_F3       &mt LCTRL F3
+#define MY_F3      &mt LCTRL F3
 
 #define MY_F       &mt LSHIFT F
 #define MY_4       &mt LSHIFT N4
-#define MY_F4       &mt LSHIFT F4
-
-
-#define MY_E       &mt LGUI E
+#define MY_F4      &mt LSHIFT F4
 
 // Right hand
 #define MY_J       &mt RSHIFT J
@@ -50,23 +49,45 @@
 
 #define MY_K       &mt RCTRL K
 #define MY_8       &mt RCTRL N8
-#define MY_F8       &mt RCTRL F8
+#define MY_F8      &mt RCTRL F8
 
 #define MY_L       &mt RALT L
 #define MY_9       &mt RALT N9
-#define MY_F9       &mt RALT F9
+#define MY_F9      &mt RALT F9
 
-#define MY_I       &mt RGUI I
+#define MY_SEMI    &mt RGUI SEMI
 
-#define MY_A       &lt LGUI A
-#define MY_SEMI    &lt RGUI SEMI
-#define MY_SPC     &lt _NUM SPC
-#define MY_SPACE   &lt _NUM SPACE
+// Thumb cluster
 #define MY_RET     &lt _CURS RET
+#define MY_BSPC    &lt _SYMB BSPC
+
+#define MY_SPACE   &lt _NUM SPACE
+#define MY_DEL     &lt _FUNL DEL
 
 
-#define MY_DEL  &lt _FUNL DEL
-#define MY_BSPC  &lt _SYMB BSPC
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_T {
+            timeout-ms = <50>;
+            key-positions = <2 3>;
+            bindings = <&kp T>;
+        };
+
+        combo_G {
+            timeout-ms = <50>;
+            key-positions = <12 13>;
+            bindings = <&mt LC(LSHIFT) G>;
+        };
+
+
+        combo_B {
+            timeout-ms = <50>;
+            key-positions = <22 23>;
+            bindings = <&kp B>;
+        };
+    };
+};
 
 
 / {
@@ -74,19 +95,91 @@
         arrow: arrow {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp MINUS &kp GT>
-                ;
+            bindings = <&macro_tap &kp MINUS &kp GT>;
         };
-    };
-};
-/ {
-    macros {
+
         fat_arrow: fat_arrow {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
+            bindings = <&macro_tap &kp EQUAL &kp GT>;
+        };
+
+        back_arrow: back_arrow {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LT &kp MINUS>;
+        };
+
+        fsharp_pipe: fsharp_pipe {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp PIPE &kp GT>;
+        };
+
+        fsharp_backpipe: fsharp_backpipe {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LT &kp PIPE>;
+        };
+
+        bind: bind {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp GT &kp GT &kp EQUAL>;
+        };
+
+        reverse_bind: reverse_bind {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp EQUAL &kp LT &kp LT >;
+        };
+
+
+
+        cotab: cotab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp EQUAL &kp GT>
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap &kp TAB>
+                , <&macro_release &kp LSHFT>
+                ;
+        };
+
+        go_blue: go_blue {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp B  &kp T  &kp SPC>
+                , <&to _BLUETOOTH>
+                ;
+        };
+
+        blue_0: blue_0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp B  &kp T  &kp MINUS  &kp N0  &kp SPC>
+                , <&bt BT_SEL 0>
+                ;
+        };
+
+        blue_1: blue_1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp B  &kp T  &kp MINUS  &kp N1  &kp SPC>
+                , <&bt BT_SEL 1>
+                ;
+        };
+
+
+        blue_clr: blue_clr {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp B  &kp T  &kp MINUS  &kp C &kp L &kp R  &kp SPC>
+                , <&bt BT_CLR >
                 ;
         };
     };
@@ -100,6 +193,7 @@
     global-quick-tap;
 };
 
+
 / {
         keymap {
                 compatible = "zmk,keymap";
@@ -107,17 +201,27 @@
                 // _BASE 0
                 default_layer {
                         label = "Arialdo";
-// ------------------------------------------------------`   '----------------------------------------
-// |  Q       |  W     |  E      |  R       |  T  |   |  Y  |  U        |  I       |  O      |  P    |
-// |  A/GUI   |  S/ALT |  D/CTRL |  F/SHIFT |  G  |   |  H  |  J/SHIFT  |  K/CTRL  |  L/ALT  | ;/GUI |
-// |  Z       |  X     |  C      |  V       |  B  |   |  N  |  M        |          |  .      |  /    |
-//                  | Bluetooth   | BSPC/SYMB | RET/CUR |  | SPACE/NUM | DEL/FUNL  |     |
+//  ------------------------------    -----------------------------
+// |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  |
+// |     |     |     |     |     |   |     |     |     |     |     |
+//  ------------------------------    -----------------------------
+// |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  ;  |
+// | GUI | ALT | CTL | SHT |     |   |     | SHT | CTL | ALT | GUI |
+//  ------------------------------    -----------------------------
+// |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  |
+// |     |     |     |     |     |   |     |     |     |     |     |
+//  ------------------------------    -----------------------------
+//
+//       -----    -----    -----       -----    -----    ----- 
+//      |     |  | BSP |  | RET |     |Space|  | DEL |  |     |
+//     |     |  |_SYMB|  |_CURS|     |_NUM |  |_FUNL|  |     |
+//      -----    -----    -----       -----    -----    ----- 
 
                         bindings = <
    &trans  &kp Q  &kp W  &kp E        &kp R  &kp T         &kp Y  &kp U    &kp I          &kp O    &kp P      &trans
    &trans  MY_A   MY_S   MY_D         MY_F   &kp G         &kp H  MY_J     MY_K            MY_L     MY_SEMI    &trans
    &trans  &kp Z  &kp X  &kp C        &kp V  &kp B         &kp N  &kp M    &kp COMMA       &kp DOT  &kp FSLH   &trans
-                   &mo _BLUETOOTH   MY_BSPC    MY_RET    MY_SPACE   MY_DEL  &trans
+                     &trans   MY_BSPC    MY_RET    MY_SPACE   MY_DEL  &trans
                         >;
                 };
 

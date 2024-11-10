@@ -26,7 +26,6 @@
 #define MY_2       &mt LALT N2
 #define MY_F2      &mt LALT F2
 
-
 #define MY_D       &mt LCTRL D
 #define MY_3       &mt LCTRL N3
 #define MY_F3      &mt LCTRL F3
@@ -50,15 +49,13 @@
 
 #define MY_SEMI    &mt RGUI SEMI
 
-
-
-#define MY_SPC     &lt _NUM SPC
-#define MY_SPACE   &lt _NUM SPACE
+// Thumb cluster
 #define MY_RET     &lt _CURS RET
-
-
-#define MY_DEL     &lt _FUNL DEL
 #define MY_BSPC    &lt _SYMB BSPC
+
+#define MY_SPACE   &lt _NUM SPACE
+#define MY_DEL     &lt _FUNL DEL
+
 
 / {
     combos {
@@ -177,8 +174,6 @@
                 , <&bt BT_CLR >
                 ;
         };
-
-
     };
 };
 
@@ -204,7 +199,7 @@
 // |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  ;  |
 // | GUI | ALT | CTL | SHT |     |   |     | SHT | CTL | ALT | GUI |
 //  ------------------------------    -----------------------------
-// |     |     |     |     |     |   |     |     |     |     |     |
+// |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  |
 // |     |     |     |     |     |   |     |     |     |     |     |
 //  ------------------------------    -----------------------------
 //
