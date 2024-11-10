@@ -228,16 +228,28 @@
                 // _CURS 1
                 cursors_layer {
                         label = "Arialdo";
-// -------------------------------------------------------------------
-// |     |     |     |     |     |   | =>  | Home |   ^  | End | `   |
-// |     |     |     |     |     |   | Ins | <--  | Down | --> |  '  |
-// |     |     |     |     |     |   |     | PgUp | CAPS | PgDn|  \  |
-//           |     |     |     |       |      | Tab   |      |
+
+//  ------------------------------    -----------------------------
+// |  `  |     |     |     |     |   |     | Home|  ^  | End |     |
+// |     |     |     |     |     |   |     |     |     |     |     |
+//  ------------------------------    -----------------------------
+// |     | <-- |     |     |     |   | Ins | <-- | Down| --> | Caps|
+// |     |     |     |     |     |   |     |     |     |     |     |
+//  ------------------------------    -----------------------------
+// |_BLUE|     |     |     |     |   |     | PgUp|Contx|PgDwn|     |
+// |     |     |     |     |     |   |     |     |     |     |     |
+//  ------------------------------    -----------------------------
+//
+//      -----     -----    -----       -----    -----    ----- 
+//     |     |   |     |  |     |     | TAB |  |     |  |     |
+//     |     |   |     |  |     |     |     |  |     |  |     |
+//      -----     -----    -----       -----    -----    ----- 
+
                         bindings = <
-   &trans     &trans       &trans       &trans       &trans       &trans         &fat_arrow  &kp HOME   &kp UP    &kp END    &kp GRAVE           &trans
-   &trans     &trans       &trans       &trans       &trans       &trans         &kp INS         &kp LEFT   &kp DOWN  &kp RIGHT  &kp SINGLE_QUOTE    &trans
-   &trans     &trans       &trans       &trans       &trans       &trans         &trans          &kp PG_UP  &kp CAPS  &kp PG_DN  &kp BACKSLASH       &trans
-                          	         &trans  &trans  &trans       &kp RET  &kp TAB    &trans
+   &trans     &kp GRAVE     &trans       &trans       &trans       &trans         &trans          &kp HOME   &kp UP    &kp END    &kp SINGLE_QUOTE    &trans
+   &trans     &mt LALT LEFT &trans       &trans       &trans       &trans         &kp INS         &kp LEFT   &kp DOWN  &kp RIGHT  &caps_word          &trans
+   &go_blue   &trans        &trans       &trans       &trans       &trans         &trans          &kp PG_UP  &kp K_APP &kp PG_DN  &kp BACKSLASH       &trans
+                                    &trans  &trans  &trans       &kp TAB  &trans    &trans
                         >;
                 };
 
