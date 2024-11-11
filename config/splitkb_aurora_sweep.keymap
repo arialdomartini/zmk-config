@@ -21,6 +21,8 @@
 
 // Left hand
 #define MY_A       &mt LGUI A
+#define MY_1       &mt LGUI N1
+#define MY_F1      &mt LGUI F1
 
 #define MY_E       &mt LC(LS(LALT)) E
 #define MY_R       &mt LC(LS(LG(LALT))) R
@@ -55,6 +57,8 @@
 #define MY_F9      &mt RALT F9
 
 #define MY_SEMI    &mt RGUI SEMI
+#define MY_0      &mt RGUI N0
+#define MY_F10     &mt RGUI F10
 
 // Thumb cluster
 #define MY_RET     &lt _CURS RET
@@ -275,7 +279,7 @@
 
                         bindings = <
       &kp EXCL     &kp AT       &kp HASH     &kp DLLR     &kp PERCENT    &trans   &kp MINUS   &kp EQUAL   &kp PLUS  &kp STAR
-      &kp N1       MY_2         MY_3         MY_4         &kp N5         &kp N6   MY_7        MY_8        MY_9    &kp N0
+      MY_1         MY_2         MY_3         MY_4         &kp N5         &kp N6   MY_7        MY_8        MY_9      MY_0
       &kp CARET    &kp AMPS     &trans       &trans       &trans         &trans   &trans      &trans      &trans    &trans
                           	                     &trans        &cotab             &trans    &trans
                         >;
@@ -334,7 +338,7 @@
 
                         bindings = <
       &kp F11      &kp F12      &kp F13      &kp F14      &kp F15        &kp F16  &kp F17  &kp F18  &kp F19  &kp F20
-      &kp F1       MY_F2        MY_F3        MY_F4        &kp F5         &kp F6   MY_F7    MY_F8    MY_F9    &kp F10
+      MY_F1        MY_F2        MY_F3        MY_F4        &kp F5         &kp F6   MY_F7    MY_F8    MY_F9    MY_F10
       &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans   &trans   &trans
                             &trans    &kp ESC               &trans  &trans
                         >;

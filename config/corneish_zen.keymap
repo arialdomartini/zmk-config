@@ -32,6 +32,8 @@
 #define MY_R       &mt LC(LS(LG(LALT))) R
 
 #define MY_A       &mt LGUI A
+#define MY_1       &mt LGUI N1
+#define MY_F1      &mt LGUI F1
 
 #define MY_S       &mt LALT S
 #define MY_2       &mt LALT N2
@@ -62,6 +64,8 @@
 #define MY_F9      &mt RALT F9
 
 #define MY_SEMI    &mt RGUI SEMI
+#define MY_0      &mt RGUI N0
+#define MY_F10     &mt RGUI F10
 
 // Thumb cluster
 #define MY_RET     &lt _CURS RET
@@ -224,10 +228,10 @@
 //      -----    -----    -----       -----    -----    ----- 
 
                         bindings = <
-   &trans  &kp Q  &kp W  MY_E         MY_R   &kp T         &kp Y  MY_U     MY_I          &kp O    &kp P      &trans
-   &trans  MY_A   MY_S   MY_D         MY_F   &kp G         &kp H  MY_J     MY_K            MY_L     MY_SEMI    &trans
-   &trans  &kp Z  &kp X  &kp C        &kp V  &kp B         &kp N  &kp M    &kp COMMA       &kp DOT  &kp FSLH   &trans
-                     &trans   MY_BSPC    MY_RET    MY_SPACE   MY_DEL  &trans
+   &none   &kp Q  &kp W  MY_E         MY_R   &kp T         &kp Y  MY_U     MY_I          &kp O    &kp P      &none 
+   &none   MY_A   MY_S   MY_D         MY_F   &kp G         &kp H  MY_J     MY_K            MY_L     MY_SEMI    &none 
+   &none   &kp Z  &kp X  &kp C        &kp V  &kp B         &kp N  &kp M    &kp COMMA       &kp DOT  &kp FSLH   &none 
+                     &none    MY_BSPC    MY_RET    MY_SPACE   MY_DEL  &none 
                         >;
                 };
 
@@ -252,10 +256,10 @@
 //      -----     -----    -----       -----    -----    ----- 
 
                         bindings = <
-   &trans     &kp GRAVE     &trans       &trans       &trans       &trans         &trans          &kp HOME   &kp UP    &kp END    &kp SINGLE_QUOTE    &trans
-   &trans     &mt LALT LEFT &trans       &trans       &trans       &trans         &kp INS         &kp LEFT   &kp DOWN  &kp RIGHT  &caps_word          &trans
-   &go_blue   &trans        &trans       &trans       &trans       &trans         &trans          &kp PG_UP  &kp K_APP &kp PG_DN  &kp BACKSLASH       &trans
-                                    &trans  &trans  &trans       &kp TAB  &trans    &trans
+   &none      &kp GRAVE     &none        &none        &none        &none          &none           &kp HOME   &kp UP    &kp END    &kp SINGLE_QUOTE    &none 
+   &none      &mt LALT LEFT &none        &none        &none        &none          &kp INS         &kp LEFT   &kp DOWN  &kp RIGHT  &caps_word          &none 
+   &go_blue   &none         &none        &none        &none        &none          &none           &kp PG_UP  &kp K_APP &kp PG_DN  &kp BACKSLASH       &none 
+                                    &none   &none   &none        &kp TAB  &none     &none 
                         >;
                 };
 
@@ -283,10 +287,10 @@
 
 
                         bindings = <
-   &trans     &kp EXCL     &kp AT       &kp HASH     &kp DLLR     &kp PERCENT    &trans   &kp MINUS   &kp EQUAL   &kp PLUS  &kp STAR   &trans
-   &trans     &kp N1       MY_2         MY_3         MY_4         &kp N5         &kp N6   MY_7        MY_8        MY_9    &kp N0     &trans
-   &trans     &kp CARET    &kp AMPS     &trans       &trans       &trans         &trans   &trans      &trans      &trans    &trans     &trans
-                          	            &trans     &trans        &trans             &trans    &trans     &trans
+   &none      &kp EXCL     &kp AT       &kp HASH     &kp DLLR     &kp PERCENT    &none    &kp MINUS   &kp EQUAL   &kp PLUS  &kp STAR   &none 
+   &none      MY_1         MY_2         MY_3         MY_4         &kp N5         &kp N6   MY_7        MY_8        MY_9      MY_0       &none 
+   &none      &kp CARET    &kp AMPS     &none        &none        &none          &none    &none       &none       &none     &none      &none 
+                          	            &none      &none         &none              &none     &none      &none 
                         >;
                 };
 
@@ -312,10 +316,10 @@
 //      -----     -----    -----       -----    -----    ----- 
 
                         bindings = <
-   &trans     &out OUT_TOG   &trans        &trans        &trans        &trans         &trans   &trans   &trans  &trans   &trans   &trans
-   &trans     &blue_1        &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans         &trans   &trans   &trans  &trans   &blue_0  &trans
-   &trans     &blue_clr      &to _BASE     &trans        &trans        &trans         &trans   &trans   &trans  &trans   &trans   &trans
-                          	    &trans     &trans       &trans      &trans  &trans   &trans
+   &none      &out OUT_TOG   &none         &none         &none         &none          &none    &none    &none   &none    &none    &none 
+   &none      &blue_1        &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none          &none    &none    &none   &none    &blue_0  &none 
+   &none      &blue_clr      &to _BASE     &none         &none         &none          &none    &none    &none   &none    &none    &none 
+                          	    &none      &none        &none       &none   &none    &none 
                         >;
                 };
 
@@ -341,10 +345,10 @@
 //      -----     -----    -----       -----    -----    ----- 
 
                         bindings = <
-   &trans     &kp F11      &kp F12      &kp F13      &kp F14      &kp F15        &kp F16  &kp F17  &kp F18  &kp F19  &kp F20  &trans
-   &trans     &kp F1       MY_F2        MY_F3        MY_F4        &kp F5         &kp F6   MY_F7    MY_F8    MY_F9    &kp F10  &trans
-   &trans     &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans   &trans   &trans   &trans
-                                            &trans    &kp ESC     &trans         &trans  &trans   &trans
+   &none      &kp F11      &kp F12      &kp F13      &kp F14      &kp F15        &kp F16  &kp F17  &kp F18  &kp F19  &kp F20  &none 
+   &none      MY_F1        MY_F2        MY_F3        MY_F4        &kp F5         &kp F6   MY_F7    MY_F8    MY_F9    MY_F10   &none 
+   &none      &none        &none        &none        &none        &none          &none    &none    &none    &none    &none    &none 
+                                            &none     &kp ESC     &none          &none   &none    &none 
                         >;
                 };
 
@@ -372,10 +376,10 @@
 //      -----     -----    -----       -----    -----    ----- 
 
                           bindings = <
-      &trans  &trans       &trans         &trans       &trans       &trans            &kp PIPE     &kp UNDER  &kp STAR    &kp TILDE  &kp DOUBLE_QUOTES  &trans
-      &trans  &kp LT       &kp LBRC       &kp LBKT     &kp LPAR     &trans            &trans       &kp RPAR   &kp RBKT  &kp RBRC     &kp GT             &trans
-      &trans  &trans       &reverse_bind  &trans       &back_arrow  &fsharp_backpipe  &fsharp_pipe &arrow     &fat_arrow    &bind    &kp BSLH           &trans
-                        	              &trans  &trans       &trans      &trans  &trans   &trans
+      &none   &none        &none          &none        &none        &none             &kp PIPE     &kp UNDER  &kp STAR    &kp TILDE  &kp DOUBLE_QUOTES  &none 
+      &none   &kp LT       &kp LBRC       &kp LBKT     &kp LPAR     &none             &none        &kp RPAR   &kp RBKT  &kp RBRC     &kp GT             &none 
+      &none   &none        &reverse_bind  &none        &back_arrow  &fsharp_backpipe  &fsharp_pipe &arrow     &fat_arrow    &bind    &kp BSLH           &none 
+                        	              &none   &none        &none       &none   &none    &none 
                         >;
                 };
 
@@ -401,10 +405,10 @@
 //      -----     -----    -----       -----    -----    ----- 
 
                         bindings = <
-   &trans     &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-   &trans     &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-   &trans     &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                          	        &trans     &trans       &trans      &trans  &trans   &trans
+   &none      &none        &none        &none        &none        &none          &none    &none    &none  &none     &none  &none 
+   &none      &none        &none        &none        &none        &none          &none    &none    &none  &none     &none  &none 
+   &none      &none        &none        &none        &none        &none          &none    &none    &none  &none     &none  &none 
+                          	        &none      &none        &none       &none   &none    &none 
                         >;
                 };
         };
