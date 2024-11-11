@@ -29,6 +29,7 @@
 
 // Left hand
 #define MY_E       &mt LC(LS(LALT)) E
+#define MY_R       &mt LC(LS(LG(LALT))) R
 
 #define MY_A       &mt LGUI A
 
@@ -45,6 +46,9 @@
 #define MY_F4      &mt LSHIFT F4
 
 // Right hand
+#define MY_I       &mt LC(LS(LALT)) I
+#define MY_U       &mt LC(LS(LG(LALT))) U
+
 #define MY_J       &mt RSHIFT J
 #define MY_7       &mt RSHIFT N7
 #define MY_F7      &mt RSHIFT F7
@@ -204,7 +208,7 @@
                 default_layer {
                         label = "Arialdo";
 //  ------------------------------    -----------------------------
-// |  Q  |  W  |E/Meh|  R  |  T  |   |  Y  |  U  |  I  |  O  |  P  |
+// |  Q  |  W  |E/Meh|R/Hyp|  T  |   |  Y  |U/Hyp|I/Meh|  O  |  P  |
 // |     |     |     |     |     |   |     |     |     |     |     |
 //  ------------------------------    -----------------------------
 // |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  ;  |
@@ -220,7 +224,7 @@
 //      -----    -----    -----       -----    -----    ----- 
 
                         bindings = <
-   &trans  &kp Q  &kp W  MY_E         &kp R  &kp T         &kp Y  &kp U    &kp I          &kp O    &kp P      &trans
+   &trans  &kp Q  &kp W  MY_E         MY_R   &kp T         &kp Y  MY_U     MY_I          &kp O    &kp P      &trans
    &trans  MY_A   MY_S   MY_D         MY_F   &kp G         &kp H  MY_J     MY_K            MY_L     MY_SEMI    &trans
    &trans  &kp Z  &kp X  &kp C        &kp V  &kp B         &kp N  &kp M    &kp COMMA       &kp DOT  &kp FSLH   &trans
                      &trans   MY_BSPC    MY_RET    MY_SPACE   MY_DEL  &trans
