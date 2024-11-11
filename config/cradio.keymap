@@ -21,6 +21,9 @@
 
 
 // Left hand
+#define MY_E       &mt LC(LS(LALT)) E
+#define MY_R       &mt LC(LS(LG(LALT))) R
+
 #define MY_A       &mt LGUI A
 
 #define MY_S       &mt LALT S
@@ -37,6 +40,9 @@
 #define MY_F4      &mt LSHIFT F4
 
 // Right hand
+#define MY_I       &mt LC(LS(LALT)) I
+#define MY_U       &mt LC(LS(LG(LALT))) U
+
 #define MY_J       &mt RSHIFT J
 #define MY_7       &mt RSHIFT N7
 #define MY_F7      &mt RSHIFT F7
@@ -218,7 +224,7 @@
 
                         bindings = <
                         
-    &kp Q   &kp W   &kp E   &kp R   &kp T         &kp Y  &kp U    &kp I      &kp O    &kp P
+    &kp Q   &kp W   MY_E    MY_R    &kp T         &kp Y  MY_U     MY_I      &kp O    &kp P
     MY_A    MY_S    MY_D    MY_F    &kp G         &kp H  MY_J     MY_K        MY_L     MY_SEMI
     &kp Z   &kp X   &kp C   &kp V   &kp B         &kp N  &kp M    &kp COMMA   &kp DOT  &kp FSLH
     
