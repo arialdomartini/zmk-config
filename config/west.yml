@@ -1,16 +1,30 @@
 manifest:
+
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+
     - name: caksoylar
       url-base: https://github.com/caksoylar
+
+    - name: urob
+      url-base: https://github.com/urob
+
+
   projects:
+    - name: zmk-helpers
+      revision: main
+      remote: urob
+      path: modules/helpers
+
     - name: zmk
       remote: caksoylar
       revision: caksoylar/zen-8bit
       import: app/west.yml
+
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: main
+
   self:
     path: config
