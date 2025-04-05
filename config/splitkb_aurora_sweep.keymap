@@ -52,9 +52,9 @@
 #define MY_8       &mt RCTRL N8
 #define MY_F8      &mt RCTRL F8
 
-#define MY_L       &mt RALT L
-#define MY_9       &mt RALT N9
-#define MY_F9      &mt RALT F9
+#define MY_L       &mt LALT L
+#define MY_9       &mt LALT N9
+#define MY_F9      &mt LALT F9
 
 #define MY_SEMI    &mt RGUI SEMI
 #define MY_0      &mt RGUI N0
