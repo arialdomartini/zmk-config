@@ -232,10 +232,10 @@
                         label = "Arialdo";
 
 //  ------------------------------    -----------------------------
-// |  `  |     |     |     |     |   |     | Home|  ^  | End |  '  |
+// |     |     |     |     |     |   | Caps| Home|  ^  | End |  "  |
 // |     |     |     |     |     |   |     |     |     |     |     |
 //  ------------------------------    -----------------------------
-// |     | <-- |     |     |     |   | Ins | <-- | Down| --> | Caps|
+// |  `  | <-- |     |     |     |   | Ins | <-- | Down| --> | '   |
 // |     |     |     |     |     |   |     |     |     |     |     |
 //  ------------------------------    -----------------------------
 // |_BLUE|     |     |     |     |   |     | PgUp|Contx|PgDwn|  \  |
@@ -249,8 +249,8 @@
 
 
                         bindings = <
-      &kp GRAVE  &none             &none        &none        &none          &none        &kp HOME   &kp UP    &kp END    &kp SINGLE_QUOTE
-      &none      &mt LALT LEFT     &trans       &trans       &trans         &kp INS      &kp LEFT   &kp DOWN  &kp RIGHT  &caps_word
+      &none      &none             &none        &none        &none          &caps_word   &kp HOME   &kp UP    &kp END    &kp DOUBLE_QUOTES
+      &kp GRAVE  &mt LALT LEFT     &trans       &trans       &trans         &kp INS      &kp LEFT   &kp DOWN  &kp RIGHT  &kp SINGLE_QUOTE
       &go_blue   &none             &none        &none        &none          &none        &kp PG_UP  &kp K_APP &kp PG_DN  &kp BACKSLASH
                                                 &none        &none          &kp TAB      &none
                         >;
@@ -351,7 +351,7 @@
                         label = "Arialdo";
 
 //  ------------------------------    -----------------------------
-// |     |     |     |     |     |   |  |  |  _  |  *  |  ~  | "   |
+// |     |     |     |     |     |   |  |  |  _  |  *  |  ~  |     |
 // |     |     |     |     |     |   |     |     |     |     |     |
 //  ------------------------------    -----------------------------
 // |  <  |  {  |  [  |  (  |     |   |     |  )  |  ]  |  }  |  >  |
@@ -367,7 +367,7 @@
 //                -----    -----       -----    -----
 
                         bindings = <
-      &none        &none          &none        &none        &none             &kp PIPE     &kp UNDER  &kp STAR    &kp TILDE  &kp DOUBLE_QUOTES
+      &none        &none          &none        &none        &none             &kp PIPE     &kp UNDER  &kp STAR    &kp TILDE  &none
       &kp LT       &kp LBRC       &kp LBKT     &kp LPAR     &none             &none        &kp RPAR   &kp RBKT  &kp RBRC     &kp GT
       &none        &reverse_bind  &none        &back_arrow  &fsharp_backpipe  &fsharp_pipe &arrow     &fat_arrow    &bind    &kp BSLH
                           	                   &none        &none             &none  &trans
