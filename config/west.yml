@@ -6,7 +6,7 @@ manifest:
       url-base: https://github.com/caksoylar
   projects:
     - name: zmk
-      remote: caksoylar
+      remote: zmkfirmware
       revision: main
       import: app/west.yml
     - name: zmk-rgbled-widget
