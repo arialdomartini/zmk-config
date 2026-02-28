@@ -7,8 +7,5 @@ manifest:
       remote: caksoylar
       revision: caksoylar/zen-v1+v2
       import: app/west.yml
-    - name: zmk-rgbled-widget
-      remote: caksoylar
-      revision: main
   self:
     path: config
