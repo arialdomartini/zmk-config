@@ -350,7 +350,7 @@
    &none      &kp F11      &kp F12      &kp F13      &kp F14      &kp F15        &kp F16  &kp F17  &kp F18  &kp F19  &kp F20  &none 
    &none      MY_F1        MY_F2        MY_F3        MY_F4        &kp F5         &kp F6   MY_F7    MY_F8    MY_F9    MY_F10   &none 
    &none      &kp F21      &kp F22      &kp F23      &kp F24      &none          &none    &none    &none    &none    &none    &none 
-                                            &none     &kp ESC     &none          &none   &none    &none 
+                                            &none    &none        &kp ESC        &none   &none    &none 
                         >;
                 };
 
