@@ -297,7 +297,7 @@
 // | BT1 | BT2 | BT3 | BT4 |     |   |     |     |     |     | BT0 |
 // |     |     |     |     |     |   |     |     |     |     |     |
 //  ------------------------------    -----------------------------
-// | CLR |_BASE|     |     |     |   |     |     |     |     |     |
+// | CLR |_BASE|     |     | BOOT|   |     |     |     |     |     |
 // |     |     |     |     |     |   |     |     |     |     |     |
 //  ------------------------------    -----------------------------
 //
@@ -310,7 +310,7 @@
                         bindings = <
    &out OUT_TOG   &none         &none         &none         &none          &none    &none    &none   &none     &none
    &blue_1        &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none          &none    &none    &none   &none     &blue_0
-   &blue_clr      &to _BASE     &none         &none         &none          &none    &none    &none   &none     &none
+   &blue_clr      &to _BASE     &none         &none         &bootloader    &none    &none    &none   &none     &none
                           	                  &none         &none          &none    &none
                         >;
                 };
