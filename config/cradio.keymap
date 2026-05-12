@@ -9,7 +9,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/mouse.h>
 
 #define _BASE       0  // base keyboard
 #define _CURS       1  // cursors
@@ -199,7 +198,7 @@
     flavor = "tap-preferred";
     tapping-term-ms = <150>;
     quick-tap-ms = <120>;
-    global-quick-tap;
+    require-prior-idle-ms = <125>;
 };
 
 / {
@@ -241,7 +240,7 @@
 //  ---------------------------------------`   '----------------------------------------
 // |       | <-/ALT|  CTL  |  SFT  |       |   |  Ins   | <--   | Down  |  -->  | WCaps |
 //  ---------------------------------------`   '----------------------------------------
-// | Blue  |       |       |       |       |   |        | PgUp  | Mouse | PgDown|  \    |
+// | Blue  |       |       |       |       |   |        | PgUp  | Ctx   | PgDown|  \    |
 //  ---------------------------------------`   '----------------------------------------
 //                    ---------------------     -----------------------
 //                   |           |         |   |  Tab     |           |
@@ -250,7 +249,7 @@
                         
    &kp GRAVE &trans         &trans   &trans   &trans     &kp PIPE &kp HOME   &kp UP    &kp END    &kp SINGLE_QUOTE
    &trans    &mt LALT LEFT  &trans   &trans   &trans     &kp INS  &kp LEFT   &kp DOWN  &kp RIGHT  &caps_word
-   &go_blue  &trans         &trans   &trans   &trans     &trans   &kp PG_UP  &mkp RCLK &kp PG_DN    &kp BACKSLASH
+   &go_blue  &trans         &trans   &trans   &trans     &trans   &kp PG_UP  &kp K_APP &kp PG_DN    &kp BACKSLASH
       
                                      &trans   &trans     &kp TAB  &trans
                                                 

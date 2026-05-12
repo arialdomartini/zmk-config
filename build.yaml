@@ -1,13 +1,9 @@
 include:
-  - board: nice_nano_v2
+  - board: nice_nano//zmk
     shield: splitkb_aurora_sweep_left
-  - board: nice_nano_v2
+  - board: nice_nano//zmk
     shield: splitkb_aurora_sweep_right
-    
-  - board: corneish_zen_v2_left
-  - board: corneish_zen_v2_right
-
-  - board: nice_nano_v2
+  - board: nice_nano//zmk
     shield: cradio_left
-  - board: nice_nano_v2
+  - board: nice_nano//zmk
     shield: cradio_right
