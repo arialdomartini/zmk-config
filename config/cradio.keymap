@@ -17,13 +17,17 @@
 #define _FUNL       4  // Function keys
 #define _SYMB       5  // Parenthesis
 
+#define MEH  LC(LS(LALT))
+#define HYPR LC(LS(LG(LALT)))
 
 
 // Left hand
-#define MY_E       &mt LC(LS(LALT)) E
-#define MY_R       &mt LC(LS(LG(LALT))) R
+#define MY_E       &mt MEH E
+#define MY_R       &mt HYPR R
 
 #define MY_A       &mt LGUI A
+#define MY_1       &mt LGUI N1
+#define MY_F1      &mt LGUI F1
 
 #define MY_S       &mt LALT S
 #define MY_2       &mt LALT N2
@@ -39,8 +43,8 @@
 #define MY_F4      &mt LSHIFT F4
 
 // Right hand
-#define MY_I       &mt LC(LS(LALT)) I
-#define MY_U       &mt LC(LS(LG(LALT))) U
+#define MY_I       &mt MEH I
+#define MY_U       &mt HYPR U
 
 #define MY_J       &mt RSHIFT J
 #define MY_7       &mt RSHIFT N7
@@ -55,16 +59,16 @@
 #define MY_F9      &mt RALT F9
 
 #define MY_SEMI    &mt RGUI SEMI
+#define MY_0      &mt RGUI N0
+#define MY_F10     &mt RGUI F10
 
-
-
-#define MY_SPC     &lt _NUM SPC
-#define MY_SPACE   &lt _NUM SPACE
+// Thumb cluster
 #define MY_RET     &lt _CURS RET
-
-
-#define MY_DEL     &lt _FUNL DEL
 #define MY_BSPC    &lt _SYMB BSPC
+
+#define MY_SPACE   &lt _NUM SPACE
+#define MY_DEL     &lt _FUNL DEL
+
 
 / {
     combos {
@@ -236,7 +240,7 @@
                 cursors_layer {
                         label = "Arialdo";
 //  ---------------------------------------`   '----------------------------------------
-// |  `    |       |       |       |       |   |    |   | Home  |  ^    |  End  |  '    |
+// |  `    |       | Meh   | Hypr  |       |   |    |   | Home  |  ^    |  End  |  '    |
 //  ---------------------------------------`   '----------------------------------------
 // |       | <-/ALT|  CTL  |  SFT  |       |   |  Ins   | <--   | Down  |  -->  | WCaps |
 //  ---------------------------------------`   '----------------------------------------
@@ -247,9 +251,9 @@
 //                    ---------------------     -----------------------
                         bindings = <
                         
-   &kp GRAVE &trans         &trans   &trans   &trans     &kp PIPE &kp HOME   &kp UP    &kp END    &kp SINGLE_QUOTE
-   &trans    &mt LALT LEFT  &trans   &trans   &trans     &kp INS  &kp LEFT   &kp DOWN  &kp RIGHT  &caps_word
-   &go_blue  &trans         &trans   &trans   &trans     &trans   &kp PG_UP  &kp K_APP &kp PG_DN    &kp BACKSLASH
+   &kp GRAVE &none          &kp MEH  &kp HYPR &none      &kp INS      &kp HOME   &kp UP    &kp END    &kp DOUBLE_QUOTES
+   &trans    &mt LALT LEFT  &trans   &trans   &none      &caps_word   &kp LEFT   &kp DOWN  &kp RIGHT  &kp SINGLE_QUOTE
+   &go_blue  &none          &none    &none    &none      &none        &kp PG_UP  &kp K_APP &kp PG_DN  &kp BACKSLASH
       
                                      &trans   &trans     &kp TAB  &trans
                                                 
@@ -274,11 +278,11 @@
 
                         bindings = <
                         
-    &kp EXCL     &kp AT       &kp HASH     &kp DLLR     &kp PERCENT    &trans   &kp MINUS   &kp EQUAL   &kp PLUS  &kp STAR
-    &kp N1       MY_2         MY_3         MY_4         &kp N5         &kp N6   MY_7        MY_8        MY_9    &kp N0
-    &kp CARET    &kp AMPS     &trans       &trans       &trans         &trans   &trans      &trans      &trans    &trans
+    &kp EXCL     &kp AT       &kp HASH     &kp DLLR     &kp PERCENT    &none    &kp MINUS   &kp EQUAL   &kp PLUS  &kp STAR
+    MY_1         MY_2         MY_3         MY_4         &kp N5         &kp N6   MY_7        MY_8        MY_9      MY_0
+    &kp CARET    &kp AMPS     &none        &none        &none          &none    &none       &none       &none     &none 
     
-                              &trans       &trans       &trans         &trans
+                              &kp BSPC     &cotab       &none          &none 
                         >;
                 };
 
@@ -289,7 +293,7 @@
 //  ---------------------------------------`   '----------------------------------------
 // |  TGL  |       |       |       |       |   |        |       |       |       |       |
 //  ---------------------------------------`   '----------------------------------------
-// |  BT0  |  BT1  |  BT2  |  BT3  |  BT4  |   |        |       |       |       |       |
+// |  BT1  |  BT2  |  BT3  |  BT4  |       |   |        |       |       |       |  BT0  |
 //  ---------------------------------------`   '----------------------------------------
 // |  CLR  | BASE  |       |       | Boot  |   |        |       |       |       |       |
 //  ---------------------------------------`   '----------------------------------------
@@ -300,11 +304,11 @@
 
                         bindings = <
                         
-   &out OUT_TOG   &trans        &trans        &trans        &trans           &trans   &trans   &trans  &trans    &trans
-   &blue_0        &blue_1       &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4     &trans   &trans   &trans  &trans    &trans
-   &blue_clr      &to _BASE     &trans        &trans        &bootloader      &trans   &trans   &trans  &trans    &trans
+   &out OUT_TOG   &none         &none         &none         &none            &none    &none    &none   &none     &none 
+   &blue_1        &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none            &none    &none    &none   &none     &blue_0
+   &blue_clr      &to _BASE     &none         &none         &bootloader      &none    &none    &none   &none     &none 
    
-                          	               &trans       &trans           &trans  &trans
+                          	               &none        &none            &none   &none 
                         >;
                 };
 
@@ -327,10 +331,10 @@
                         bindings = <
                         
    &kp F11  &kp F12  &kp F13   &kp F14   &kp F15        &kp F16  &kp F17  &kp F18  &kp F19  &kp F20
-   &kp F1   MY_F2    MY_F3     MY_F4     &kp F5         &kp F6   MY_F7    MY_F8    MY_F9    &kp F10
-   &trans   &trans   &trans    &trans    &trans         &trans   &trans   &trans   &trans   &trans
+   MY_F1    MY_F2    MY_F3     MY_F4     &kp F5         &kp F6   MY_F7    MY_F8    MY_F9     MY_F10
+   &kp F21  &kp F22  &kp F23   &kp F24   &none          &none    &none    &none    &none    &none 
       
-                              &kp ESC    &cotab         &trans  &trans
+                              &none    &kp ESC         &none   &none 
                         >;
                 };
 
@@ -341,7 +345,7 @@
                         label = "Arialdo";
 
 //  ---------------------------------------`   '----------------------------------------
-// |       |       |       |       |       |   |    |   |   _   |   *   |   ~   |  "    |
+// |       |       |       |       |       |   |    |   |   _   |   *   |   ~   |  -    |
 //  ---------------------------------------`   '----------------------------------------
 // |   <   |   {   |   [   |   (   |       |   |        |   )   |   ]   |   }   |   >   |
 //  ---------------------------------------`   '----------------------------------------
@@ -352,12 +356,12 @@
 //                    ---------------------     -----------------------
 
                         bindings = <
-                        
-   &trans    &trans         &trans     &trans       &trans              &kp PIPE      &kp UNDER  &kp STAR    &kp TILDE   &kp DQT
-   &kp LT    &kp LBRC       &kp LBKT   &kp LPAR     &trans              &trans        &kp RPAR   &kp RBKT    &kp RBRC    &kp GT
-   &trans    &reverse_bind  &trans     &back_arrow  &fsharp_backpipe    &fsharp_pipe  &arrow     &fat_arrow  &bind       &ap
+
+   &none     &none          &none      &none        &none               &kp PIPE      &kp UNDER  &kp STAR    &kp TILDE   &kp MINUS
+   &kp LT    &kp LBRC       &kp LBKT   &kp LPAR     &none               &none         &kp RPAR   &kp RBKT    &kp RBRC    &kp GT
+   &none     &reverse_bind  &none      &back_arrow  &fsharp_backpipe    &fsharp_pipe  &arrow     &fat_arrow  &bind       &ap
       
-                          	       &trans       &trans              &trans        &trans
+                          	       &none        &none               &none         &none 
                         >;
                 };
 
