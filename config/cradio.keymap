@@ -242,7 +242,7 @@
 //  ---------------------------------------`   '----------------------------------------
 // |  `    |       | Meh   | Hypr  |       |   |    |   | Home  |  ^    |  End  |  '    |
 //  ---------------------------------------`   '----------------------------------------
-// |       | <-/ALT|  CTL  |  SFT  |       |   |  Ins   | <--   | Down  |  -->  | WCaps |
+// | `/GUI | <-/ALT|  CTL  |  SFT  |       |   |  Ins   | <--   | Down  |  -->  | WCaps |
 //  ---------------------------------------`   '----------------------------------------
 // | Blue  |       |       |       |       |   |        | PgUp  | Ctx   | PgDown|  \    |
 //  ---------------------------------------`   '----------------------------------------
@@ -251,9 +251,9 @@
 //                    ---------------------     -----------------------
                         bindings = <
                         
-   &kp GRAVE &none          &kp MEH  &kp HYPR &none      &kp INS      &kp HOME   &kp UP    &kp END    &kp DOUBLE_QUOTES
-   &trans    &mt LALT LEFT  &trans   &trans   &none      &caps_word   &kp LEFT   &kp DOWN  &kp RIGHT  &kp SINGLE_QUOTE
-   &go_blue  &none          &none    &none    &none      &none        &kp PG_UP  &kp K_APP &kp PG_DN  &kp BACKSLASH
+   &kp GRAVE       &none          &kp MEH  &kp HYPR &none      &kp INS      &kp HOME   &kp UP    &kp END    &kp DOUBLE_QUOTES
+   &mt LGUI GRAVE  &mt LALT LEFT  &trans   &trans   &none      &caps_word   &kp LEFT   &kp DOWN  &kp RIGHT  &kp SINGLE_QUOTE
+   &go_blue        &none          &none    &none    &none      &none        &kp PG_UP  &kp K_APP &kp PG_DN  &kp BACKSLASH
       
                                      &trans   &trans     &kp TAB  &trans
                                                 
