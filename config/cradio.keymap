@@ -79,13 +79,6 @@
             bindings = <&kp T>;
         };
 
-        combo_G {
-            timeout-ms = <50>;
-            key-positions = <12 13>;
-            bindings = <&mt LC(LSHIFT) G>;
-        };
-
-
         combo_B {
             timeout-ms = <50>;
             key-positions = <22 23>;
