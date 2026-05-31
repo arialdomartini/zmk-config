@@ -237,7 +237,7 @@
 //  ---------------------------------------`   '----------------------------------------
 // | `/GUI | <-/ALT|  CTL  |  SFT  |       |   |  Ins   | <--   | Down  |  -->  | WCaps |
 //  ---------------------------------------`   '----------------------------------------
-// | Blue  |       |       |       |       |   |        | PgUp  | Ctx   | PgDown|  \    |
+// | Blue  |       |       |       |       |   |  CURS  | PgUp  | Ctx   | PgDown|  \    |
 //  ---------------------------------------`   '----------------------------------------
 //                    ---------------------     -----------------------
 //                   |           |         |   |  Tab     |           |
@@ -246,7 +246,7 @@
                         
    &kp GRAVE       &none          &kp MEH   &kp HYPR   &none        &kp INS      &kp HOME   &kp UP    &kp END    &kp DOUBLE_QUOTES
    &mt LGUI GRAVE  &mt LALT LEFT  &kp LCTRL &kp LSHFT  &none        &caps_word   &kp LEFT   &kp DOWN  &kp RIGHT  &kp SINGLE_QUOTE
-   &go_blue        &none          &none     &none      &none        &none        &kp PG_UP  &kp K_APP &kp PG_DN  &kp BACKSLASH
+   &go_blue        &none          &none     &none      &none        &tog _CURS   &kp PG_UP  &kp K_APP &kp PG_DN  &kp BACKSLASH
       
                                              &trans   &trans        &kp TAB  &trans
                                                 
